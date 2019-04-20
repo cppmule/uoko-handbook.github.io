@@ -3,6 +3,7 @@
 data.service层，在目前架构中，主要用来连通dao和core层service的传递层。
 
  * 示例
+ 
     ```
     @Service
     public class UcAuthDataServiceImpl extends ServiceImpl<UcAuthDao, UcAuthEntity> implements UcAuthDataService {

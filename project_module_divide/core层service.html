@@ -497,9 +497,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.2" data-path="../project_begin_end/访问中台api.md">
+        <li class="chapter " data-level="1.7.2" data-path="../project_begin_end/使用中台api.html">
             
-                <span>
+                <a href="../project_begin_end/使用中台api.html">
             
                     
                     第2节：访问中台api
@@ -1138,93 +1138,91 @@
 <p>core&#x5C42;service&#xFF0C;&#x5728;&#x76EE;&#x524D;&#x67B6;&#x6784;&#x4E2D;&#x5B9A;&#x4E49;&#x6210;&#xFF1A;&#x7528;&#x6765;&#x5B9E;&#x73B0;<code>uoko-xxx-xxx-api</code>&#x4E2D;&#x63A5;&#x53E3;&#x7684;&#x5B9E;&#x73B0;&#x3002;</p>
 <ul>
 <li><p>&#x6848;&#x4F8B;</p>
-<p>```
-@RequestMapping(&quot;user&quot;)
+<pre><code>@RequestMapping(&quot;user&quot;)
 @RestController()
 @Api(value = &quot;&#x7528;&#x6237;&#x7BA1;&#x7406;&quot;, description = &quot;&#x7528;&#x6237;&#x4E2D;&#x5FC3;&#x7528;&#x6237;&#x6A21;&#x5757;&quot;)
 @Service
-public class UcUserServiceImpl implements UserService {</p>
-<pre><code>@Autowired
-private UcUserDataService ucUserDataService;
-@Autowired
-private UcRoleDataService ucRoleDataService;
-@Autowired
-private UcPlatformDataService ucPlatformDataService;
-@Autowired
-private UcPlatformRoleDataService ucPlatformRoleDataService;
-@Autowired
-private UcAuthDataService ucAuthDataService;
-@Autowired
-private UcExtraDataService ucExtraDataService;
-@Autowired
-private UcAuthPlatformDataService ucAuthPlatformDataService;
-@Autowired
-private BCryptPasswordEncoder bCryptPasswordEncoder;
-@Autowired
-private SnowFlake snowFlake;
-@Autowired
-private UcUserPlatformDataService ucUserPlatformDataService;
+public class UcUserServiceImpl implements UserService {
+
+    @Autowired
+    private UcUserDataService ucUserDataService;
+    @Autowired
+    private UcRoleDataService ucRoleDataService;
+    @Autowired
+    private UcPlatformDataService ucPlatformDataService;
+    @Autowired
+    private UcPlatformRoleDataService ucPlatformRoleDataService;
+    @Autowired
+    private UcAuthDataService ucAuthDataService;
+    @Autowired
+    private UcExtraDataService ucExtraDataService;
+    @Autowired
+    private UcAuthPlatformDataService ucAuthPlatformDataService;
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+    @Autowired
+    private SnowFlake snowFlake;
+    @Autowired
+    private UcUserPlatformDataService ucUserPlatformDataService;
+
+    @ApiOperation(&quot;&#x7528;&#x6237;id&#x67E5;&#x8BE2;&#x7528;&#x6237;&#x4FE1;&#x606F;&quot;)
+    @ApiImplicitParam(value = &quot;&#x7528;&#x6237;id&quot;, name = &quot;userId&quot;, dataType = &quot;Long&quot;, example = &quot;12111&quot;)
+    @GetMapping(&quot;{userId}&quot;)
+    @Override
+    public UserDTO findUserByUserId(@PathVariable(&quot;userId&quot;) String userId) {
+        /*
+        1.&#x67E5;&#x8BE2;&#x7528;&#x6237;&#x57FA;&#x672C;&#x6570;&#x636E;
+        2.&#x67E5;&#x8BE2;&#x7528;&#x6237;&#x989D;&#x5916;&#x6570;&#x636E;
+         */
+        UcUserEntity ucUserEntity = ucUserDataService.selectById(userId);
+        if (ucUserEntity == null) {
+            return null;
+        }
+        UserDTO userDTO = new UserDTO();
+        BeanUtils.copyProperties(ucUserEntity, userDTO);
+        userDTO.setUserId(ucUserEntity.getId());
+        UcExtraEntity ucExtraEntity = ucExtraDataService.findByUserId(ucUserEntity.getId());
+        UcExtraDTO ucExtraDTO = new UcExtraDTO();
+        BeanUtils.copyProperties(ucExtraEntity, ucExtraDTO);
+        userDTO.setUcExtraDTO(ucExtraDTO);
+        return userDTO;
+    }
+
+    /**
+     * &#x7528;&#x6237;&#x5B58;&#x5728;&#xFF0C;&#x4E0D;&#x5B58;&#x5728;&#x6388;&#x6743;&#x7684;&#x8D26;&#x53F7;
+     * 1.&#x5224;&#x65AD;&#x662F;&#x5426;&#x6709;&#x6388;&#x6743;&#x8D26;&#x53F7;
+     * 2.&#x5982;&#x679C;&#x65E0;&#x6CE8;&#x518C;
+     * 3.&#x5982;&#x679C;&#x6709;&#x8FD4;&#x56DE;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;
+     * 4.&#x662F;&#x5426;&#x662F;&#x65B0;&#x5E73;&#x53F0;&#x540C;&#x4E00;&#x4E2A;&#x8D26;&#x53F7;&#x52A0;&#x5165;
+     * &lt;p&gt;
+     * &#x7528;&#x6237;&#x4E0D;&#x5B58;&#x5728;
+     * 1.&#x63D2;&#x5165;&#x7528;&#x6237;&#x8868;
+     * 2.&#x63D2;&#x5165;&#x989D;&#x5916;&#x7684;&#x4FE1;&#x606F;
+     * 3.&#x63D2;&#x5165;&#x6388;&#x6743;&#x4FE1;&#x606F;
+     * 4.&#x5206;&#x914D;&#x5E73;&#x53F0;
+     *
+     * @param
+     * @return
+     * @author shaohua
+     * @date
+     **/
+    @Override
+    @ApiOperation(value = &quot;&#x589E;&#x52A0;&#x7528;&#x6237;&#x4FE1;&#x606F;&quot;)
+    @PostMapping
+    @Transactional(rollbackFor = Exception.class)
+    public UserDTO insertUser(@RequestBody @Valid UserDTO userDTO) {
+        UcUserEntity ucUserEntity = ucUserDataService.findUserByUsername(userDTO.getUsername());
+        if (ucUserEntity != null) {
+            //&#x7528;&#x6237;&#x5B58;&#x5728;&#xFF0C;&#x68C0;&#x67E5;&#x7528;&#x6237;&#x662F;&#x5426;&#x6709;&#x66F4;&#x65B0;&#x6570;&#x636E;&#xFF0C;&#x6216;&#x8005;&#x786E;&#x5B9E;&#x6570;&#x636E;
+            return updateUserInfo(userDTO, ucUserEntity);
+        } else {
+            //&#x7528;&#x6237;&#x4E0D;&#x5B58;&#x5728; &#x63D2;&#x5165;&#x7528;&#x6237;&#x6570;&#x636E;
+            return insertUserInfo(userDTO);
+        }
+    }
+ }
 </code></pre></li>
 </ul>
-<pre><code>   @ApiOperation(&quot;&#x7528;&#x6237;id&#x67E5;&#x8BE2;&#x7528;&#x6237;&#x4FE1;&#x606F;&quot;)
-   @ApiImplicitParam(value = &quot;&#x7528;&#x6237;id&quot;, name = &quot;userId&quot;, dataType = &quot;Long&quot;, example = &quot;12111&quot;)
-   @GetMapping(&quot;{userId}&quot;)
-   @Override
-   public UserDTO findUserByUserId(@PathVariable(&quot;userId&quot;) String userId) {
-       /*
-       1.&#x67E5;&#x8BE2;&#x7528;&#x6237;&#x57FA;&#x672C;&#x6570;&#x636E;
-       2.&#x67E5;&#x8BE2;&#x7528;&#x6237;&#x989D;&#x5916;&#x6570;&#x636E;
-        */
-       UcUserEntity ucUserEntity = ucUserDataService.selectById(userId);
-       if (ucUserEntity == null) {
-           return null;
-       }
-       UserDTO userDTO = new UserDTO();
-       BeanUtils.copyProperties(ucUserEntity, userDTO);
-       userDTO.setUserId(ucUserEntity.getId());
-       UcExtraEntity ucExtraEntity = ucExtraDataService.findByUserId(ucUserEntity.getId());
-       UcExtraDTO ucExtraDTO = new UcExtraDTO();
-       BeanUtils.copyProperties(ucExtraEntity, ucExtraDTO);
-       userDTO.setUcExtraDTO(ucExtraDTO);
-       return userDTO;
-   }
-
-
-   /**
-    * &#x7528;&#x6237;&#x5B58;&#x5728;&#xFF0C;&#x4E0D;&#x5B58;&#x5728;&#x6388;&#x6743;&#x7684;&#x8D26;&#x53F7;
-    * 1.&#x5224;&#x65AD;&#x662F;&#x5426;&#x6709;&#x6388;&#x6743;&#x8D26;&#x53F7;
-    * 2.&#x5982;&#x679C;&#x65E0;&#x6CE8;&#x518C;
-    * 3.&#x5982;&#x679C;&#x6709;&#x8FD4;&#x56DE;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;
-    * 4.&#x662F;&#x5426;&#x662F;&#x65B0;&#x5E73;&#x53F0;&#x540C;&#x4E00;&#x4E2A;&#x8D26;&#x53F7;&#x52A0;&#x5165;
-    * &lt;p&gt;
-    * &#x7528;&#x6237;&#x4E0D;&#x5B58;&#x5728;
-    * 1.&#x63D2;&#x5165;&#x7528;&#x6237;&#x8868;
-    * 2.&#x63D2;&#x5165;&#x989D;&#x5916;&#x7684;&#x4FE1;&#x606F;
-    * 3.&#x63D2;&#x5165;&#x6388;&#x6743;&#x4FE1;&#x606F;
-    * 4.&#x5206;&#x914D;&#x5E73;&#x53F0;
-    *
-    * @param
-    * @return
-    * @author shaohua
-    * @date
-    **/
-   @Override
-   @ApiOperation(value = &quot;&#x589E;&#x52A0;&#x7528;&#x6237;&#x4FE1;&#x606F;&quot;)
-   @PostMapping
-   @Transactional(rollbackFor = Exception.class)
-   public UserDTO insertUser(@RequestBody @Valid UserDTO userDTO) {
-       UcUserEntity ucUserEntity = ucUserDataService.findUserByUsername(userDTO.getUsername());
-       if (ucUserEntity != null) {
-           //&#x7528;&#x6237;&#x5B58;&#x5728;&#xFF0C;&#x68C0;&#x67E5;&#x7528;&#x6237;&#x662F;&#x5426;&#x6709;&#x66F4;&#x65B0;&#x6570;&#x636E;&#xFF0C;&#x6216;&#x8005;&#x786E;&#x5B9E;&#x6570;&#x636E;
-           return updateUserInfo(userDTO, ucUserEntity);
-       } else {
-           //&#x7528;&#x6237;&#x4E0D;&#x5B58;&#x5728; &#x63D2;&#x5165;&#x7528;&#x6237;&#x6570;&#x636E;
-           return insertUserInfo(userDTO);
-       }
-   }
-
-} 
-</code></pre><p>  ```</p>
 
                                 
                                 </section>
@@ -1268,7 +1266,7 @@ private UcUserPlatformDataService ucUserPlatformDataService;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1：core层service","level":"1.6.5.1","depth":3,"next":{"title":"2：biz层service","level":"1.6.5.2","depth":3,"path":"project_module_divide/biz层service.md","ref":"project_module_divide/biz层service.md","articles":[]},"previous":{"title":"第5节：service","level":"1.6.5","depth":2,"path":"project_module_divide/service.md","ref":"project_module_divide/service.md","articles":[{"title":"1：core层service","level":"1.6.5.1","depth":3,"path":"project_module_divide/core层service.md","ref":"project_module_divide/core层service.md","articles":[]},{"title":"2：biz层service","level":"1.6.5.2","depth":3,"path":"project_module_divide/biz层service.md","ref":"project_module_divide/biz层service.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"project_module_divide/core层service.md","mtime":"2019-04-19T06:47:07.698Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-19T10:29:11.556Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1：core层service","level":"1.6.5.1","depth":3,"next":{"title":"2：biz层service","level":"1.6.5.2","depth":3,"path":"project_module_divide/biz层service.md","ref":"project_module_divide/biz层service.md","articles":[]},"previous":{"title":"第5节：service","level":"1.6.5","depth":2,"path":"project_module_divide/service.md","ref":"project_module_divide/service.md","articles":[{"title":"1：core层service","level":"1.6.5.1","depth":3,"path":"project_module_divide/core层service.md","ref":"project_module_divide/core层service.md","articles":[]},{"title":"2：biz层service","level":"1.6.5.2","depth":3,"path":"project_module_divide/biz层service.md","ref":"project_module_divide/biz层service.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"project_module_divide/core层service.md","mtime":"2019-04-20T04:30:34.105Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-20T04:53:09.428Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

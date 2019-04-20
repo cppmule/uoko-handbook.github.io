@@ -3,6 +3,7 @@
 dao层，在目前架构中，仅用来存放mybatis中的dao。
 
    * 示例
+   
    ```
    @Mapper
    public interface UcUserDao extends BaseMapper<UcUserEntity> {
@@ -13,7 +14,6 @@ dao层，在目前架构中，仅用来存放mybatis中的dao。
         * @return
         */
        UcUserEntity selectByUsername(@Param("username") String username);
-   
    
        /**
         * 通过用户手机号查询用户信息
@@ -34,7 +34,6 @@ dao层，在目前架构中，仅用来存放mybatis中的dao。
         * @date
         **/
        List<UcUserEntity> findByUserIds(String... userIds);
-   
    
        /**
         * 多条件查询用户信息

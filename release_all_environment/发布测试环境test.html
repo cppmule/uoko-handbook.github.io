@@ -497,9 +497,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.2" data-path="../project_begin_end/访问中台api.md">
+        <li class="chapter " data-level="1.7.2" data-path="../project_begin_end/使用中台api.html">
             
-                <span>
+                <a href="../project_begin_end/使用中台api.html">
             
                     
                     第2节：访问中台api
@@ -1135,6 +1135,116 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x53D1;&#x5E03;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;test">&#x53D1;&#x5E03;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;(test)</h1>
+<p>&#x6D4B;&#x8BD5;&#x73AF;&#x5883;(test)</p>
+<ol>
+<li>&#x6D4B;&#x8BD5;&#x73AF;&#x5883;&#x7BA1;&#x7406;&#x76F8;&#x5BF9;&#x89C4;&#x8303;&#xFF0C;&#x8D44;&#x6E90;&#x5206;&#x914D;&#x5747;&#x5300;&#x3002;&#x6D4B;&#x8BD5;&#x76EE;&#x524D;&#x670D;&#x52A1;&#x5668;&#x7531;<code>&#x5B50;&#x8861;</code>&#x7EDF;&#x4E00;&#x7BA1;&#x63A7;&#x3002;
+&#x5982;&#x6709;&#x65B0;&#x670D;&#x52A1;&#x9700;&#x8981;&#x90E8;&#x7F72;&#xFF0C;&#x9700;&#x8981;&#x8054;&#x7CFB;<code>&#x5B50;&#x8861;</code>&#x534F;&#x52A9;.</li>
+<li>&#x6D4B;&#x8BD5;&#x73AF;&#x5883;&#x91C7;&#x7528;config&#x914D;&#x7F6E;&#x4E2D;&#x5FC3;&#xFF0C;&#x56E0;&#x6B64;&#x914D;&#x7F6E;&#x5C06;&#x4F1A;&#x8D70;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;&#x914D;&#x7F6E;&#x4E2D;&#x5FC3;&#x3002;</li>
+</ol>
+<p>&#x76EE;&#x524D;&#x90E8;&#x7F72;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x7684;&#x670D;&#x52A1;&#x5668;&#x6E05;&#x5355;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>IP</th>
+<th>OS</th>
+<th>root&#x5BC6;&#x7801;</th>
+<th>port</th>
+<th>&#x64CD;&#x4F5C;&#x8D26;&#x53F7;</th>
+<th>&#x64CD;&#x4F5C;&#x5BC6;&#x7801;</th>
+<th>&#x4F5C;&#x7528;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>192.168.200.126</td>
+<td>centos7.5</td>
+<td>-</td>
+<td>22</td>
+<td>arch-uoko</td>
+<td>archUoko@123</td>
+<td>X&#x7AEF;&#x5F00;&#x53D1;&#x5360;&#x7528;&#x4E2D;</td>
+</tr>
+<tr>
+<td>192.168.200.44</td>
+<td>centos7.5</td>
+<td>-</td>
+<td>22</td>
+<td>arch-uoko</td>
+<td>archUoko@123</td>
+<td>&#x57FA;&#x7840;&#x7EC4;&#x4EF6;&#x5360;&#x7528;&#x4E2D;</td>
+</tr>
+<tr>
+<td>192.168.200.45</td>
+<td>centos7.5</td>
+<td>-</td>
+<td>22</td>
+<td>arch-uoko</td>
+<td>archUoko@123</td>
+<td>&#x53EF;&#x90E8;&#x7F72;&#x5176;&#x4ED6;&#x670D;&#x52A1;</td>
+</tr>
+<tr>
+<td>192.168.200.46</td>
+<td>centos7.5</td>
+<td>-</td>
+<td>22</td>
+<td>arch-uoko</td>
+<td>archUoko@123</td>
+<td>&#x53EF;&#x90E8;&#x7F72;&#x5176;&#x4ED6;&#x5F00;&#x53D1;&#x670D;&#x52A1;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x68C0;&#x67E5;</p>
+<ul>
+<li><p>bootstrap.xml&#x914D;&#x7F6E;</p>
+<p>bootstrap.xml&#x4E2D;&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x5728;&#x751F;&#x6210;&#x4EE3;&#x7801;&#x8FC7;&#x7A0B;&#x4E2D;&#x662F;&#x9ED8;&#x8BA4;&#x5F00;&#x542F;&#x3002;&#x9700;&#x8981;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x68C0;&#x67E5;&#x3002;
+&#x9700;&#x5C06;config&#x5F00;&#x542F;&#xFF0C; <code>spring.cloud.config.enabled: true</code>&#x3002;
+(<strong>&#x7247;&#x5916;: base 1.1.4.RELEASE &#x4EE5;&#x540E;&#x7248;&#x672C;&#xFF0C;bootstrap&#x6587;&#x4EF6;&#x5B58;&#x653E;&#x5728;prod&#x6587;&#x4EF6;</strong>)</p>
+<p>&#x4FEE;&#x6539;&#x540E;&#x7684;&#x914D;&#x7F6E;&#x5982;&#x4E0B;&#x3002;</p>
+<pre><code> spring:
+       cloud:
+         config:
+           uri: http://192.168.200.26:8040
+           name: uoko-platform-auth,uoko-system-common
+           profile: pro
+           label: master
+           enabled: true
+</code></pre></li>
+<li><p>consul&#x914D;&#x7F6E;&#x68C0;&#x67E5;</p>
+<pre><code>    cloud:
+  #    service-registry:
+  #      auto-registration:
+  #        enabled: false
+      consul:
+        host: 192.168.200.22
+        port: 8500
+        discovery:
+          healthCheckPath: /actuator/health
+          healthCheckInterval: 5s
+          enabled: true
+          prefer-ip-address: true
+        enabled: true
+</code></pre></li>
+<li><p>&#x5176;&#x4ED6;&#x989D;&#x5916;&#x53C2;&#x6570;&#x68C0;&#x67E5;</p>
+<ul>
+<li><p>mysql </p>
+<p>mysql &#x9700;&#x8FDE;&#x63A5;&#x5230; <code>192.169.200.66:3336</code>  </p>
+</li>
+<li><p>redis</p>
+<p>redis &#x9700;&#x8FDE;&#x63A5;&#x5230; <code>192.168.200.121:</code></p>
+</li>
+<li><p>rabbitmq</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>jenkins &#x53D1;&#x5E03;</p>
+<p>jenkins&#x53D1;&#x5E03;&#xFF0C;&#x70B9;&#x51FB; <a href="http://192.168.200.120:8080/jenkins" target="_blank">http://192.168.200.120:8080/jenkins</a>
+&#x767B;&#x5F55;&#x8D26;&#x53F7; <code>test_admin</code>,<code>test_admin</code>,&#x5BFB;&#x627E;&#x5230;&#x76F8;&#x5E94;&#x7684;&#x5E94;&#x7528;&#x70B9;&#x51FB;&#x53D1;&#x5E03;&#x5373;&#x53EF;&#x3002;
+  <strong>&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#xFF1A;&#x5982;&#x53D1;&#x73B0;jenkins&#x4E0A;&#x6CA1;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x670D;&#x52A1;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;<code>&#x5148;&#x679C;</code>&#x6216;<code>&#x5B50;&#x8861;</code>&#x534F;&#x52A9;&#x6DFB;&#x52A0;&#x5E94;&#x7528;</strong></p>
+</li>
+</ul>
 
                                 
                                 </section>
@@ -1178,7 +1288,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第2节：发布测试环境(test)","level":"1.13.2","depth":2,"next":{"title":"第3节：发布预发布环境(pre)","level":"1.13.3","depth":2,"path":"release_all_environment/发布预发布环境pre.md","ref":"release_all_environment/发布预发布环境pre.md","articles":[]},"previous":{"title":"第1节：发布开发环境(dev)","level":"1.13.1","depth":2,"path":"release_all_environment/发布开发环境dev.md","ref":"release_all_environment/发布开发环境dev.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"release_all_environment/发布测试环境test.md","mtime":"2019-04-18T01:52:58.973Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-19T10:29:11.556Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第2节：发布测试环境(test)","level":"1.13.2","depth":2,"next":{"title":"第3节：发布预发布环境(pre)","level":"1.13.3","depth":2,"path":"release_all_environment/发布预发布环境pre.md","ref":"release_all_environment/发布预发布环境pre.md","articles":[]},"previous":{"title":"第1节：发布开发环境(dev)","level":"1.13.1","depth":2,"path":"release_all_environment/发布开发环境dev.md","ref":"release_all_environment/发布开发环境dev.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"release_all_environment/发布测试环境test.md","mtime":"2019-04-20T04:15:35.453Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-20T04:53:09.428Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

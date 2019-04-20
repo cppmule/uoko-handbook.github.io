@@ -118,12 +118,12 @@ config目录，在目前项目架构中定义内容稍微比较广泛。它们�
   
   
   * 示例
+  
       ```
       @Order(SecurityProperties.BASIC_AUTH_ORDER - 3)
       @Configuration
       @EnableWebSecurity
       public class SecurityConfigurerAdapter extends WebSecurityConfigurerAdapter {
-      
           @Autowired
           private FilterIgnorePropertiesConfig filterIgnorePropertiesConfig;
           @Autowired
@@ -159,8 +159,6 @@ config目录，在目前项目架构中定义内容稍微比较广泛。它们�
       
       
           }
-      
-      
           @Bean
           @Override
           public AuthenticationManager authenticationManagerBean() throws Exception {

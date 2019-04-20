@@ -497,9 +497,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.2" data-path="../project_begin_end/访问中台api.md">
+        <li class="chapter " data-level="1.7.2" data-path="../project_begin_end/使用中台api.html">
             
-                <span>
+                <a href="../project_begin_end/使用中台api.html">
             
                     
                     第2节：访问中台api
@@ -1134,8 +1134,10 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="bootstapxml&#x914D;&#x7F6E;">bootstap.xml&#x914D;&#x7F6E;</h1>
+                                <h1 id="bootstrapxml&#x914D;&#x7F6E;">bootstrap.xml&#x914D;&#x7F6E;</h1>
 <p>bootstrap.xml &#x5728;&#x76EE;&#x524D;&#x5FAE;&#x670D;&#x52A1;&#x542F;&#x52A8;&#x65F6;&#xFF0C;&#x7528;&#x6765;&#x83B7;&#x53D6;&#x8FDC;&#x7A0B;&#x914D;&#x7F6E;&#xFF0C;&#x5E76;&#x8986;&#x76D6;&#x672C;&#x5730;&#x914D;&#x7F6E;&#x7684;&#x6587;&#x4EF6;&#x3002;</p>
+<p><strong>&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#xFF1A;&#x5728; base 1.1.4.RELEASE bootstrap.xml 
+&#x6587;&#x4EF6;&#x7EBF;&#x4E0A;&#x90E8;&#x7F72;&#x7684;&#x4F7F;&#x7528;&#x7684; prod &#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6587;&#x4EF6;</strong></p>
 <ul>
 <li><p>&#x5F00;&#x53D1;&#x73AF;&#x5883;(dev)</p>
 <p>  &#x5F00;&#x53D1;&#x73AF;&#x5883;&#x7531;&#x4E8E;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x7ECF;&#x5E38;&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#xFF0C;&#x56E0;&#x6B64;&#x76EE;&#x524D;&#x4E0D;&#x8D70;config&#x914D;&#x7F6E;&#x3002;&#x672C;&#x5730;&#x5F00;&#x53D1;&#x9700;&#x8981;&#x68C0;&#x67E5;<code>config</code>&#x662F;&#x5426;&#x5173;&#x95ED;&#xFF0C;
@@ -1169,19 +1171,15 @@
 <li><p>&#x9884;&#x53D1;&#x5E03;&#x73AF;&#x5883;(pre)</p>
 <p> &#x5728;&#x76EE;&#x524D;&#x7684;&#x73AF;&#x5883;&#x914D;&#x7F6E;&#x4E2D;&#xFF0C;&#x9700;&#x8981;&#x8D70;config&#x914D;&#x7F6E;&#x4E2D;&#x5FC3;&#xFF0C;&#x56E0;&#x6B64;&#x9700;&#x8981;&#x5F00;&#x542F;config&#x4E2D;&#x5FC3;&#x83B7;&#x53D6;&#x914D;&#x7F6E;&#x9608;<code>enabled: true</code>,
  &#x5C06;uri&#x4FEE;&#x6539;&#x6210;&#x5BF9;&#x5E94;&#x7684;&#x73AF;&#x5883;config&#x914D;&#x7F6E;&#x4E2D;&#x5FC3;&#x5730;&#x5740;&#x3002;&#x6700;&#x540E;&#x6BD4;&#x8F83;&#x603B;&#x8981;&#x7684;&#x662F;&#x68C0;&#x67E5;name&#x662F;&#x5426;&#x662F;&#x5F53;&#x524D;&#x5E94;&#x7528;&#x7684;<code>application.name</code>,</p>
-</li>
-</ul>
-<pre><code>```
-  spring:
-    cloud:
-      config:
-        uri: http://10.0.0.218:8040
-        name: uoko-platform-auth,uoko-system-common
-        profile: pro
-        label: master
-        enabled: true
-```
-</code></pre><ul>
+<pre><code>    spring:
+      cloud:
+        config:
+          uri: http://10.0.0.218:8040
+          name: uoko-platform-auth,uoko-system-common
+          profile: pro
+          label: master
+          enabled: true
+</code></pre></li>
 <li><p>&#x53D1;&#x5E03;&#x73AF;&#x5883;(prod)</p>
 <p> &#x5728;&#x76EE;&#x524D;&#x7684;&#x73AF;&#x5883;&#x914D;&#x7F6E;&#x4E2D;&#xFF0C;&#x9700;&#x8981;&#x8D70;config&#x914D;&#x7F6E;&#x4E2D;&#x5FC3;&#xFF0C;&#x56E0;&#x6B64;&#x9700;&#x8981;&#x5F00;&#x542F;config&#x4E2D;&#x5FC3;&#x83B7;&#x53D6;&#x914D;&#x7F6E;&#x9608;<code>enabled: true</code>,
  &#x5C06;uri&#x4FEE;&#x6539;&#x6210;&#x5BF9;&#x5E94;&#x7684;&#x73AF;&#x5883;config&#x914D;&#x7F6E;&#x4E2D;&#x5FC3;&#x5730;&#x5740;&#x3002;&#x6700;&#x540E;&#x6BD4;&#x8F83;&#x603B;&#x8981;&#x7684;&#x662F;&#x68C0;&#x67E5;name&#x662F;&#x5426;&#x662F;&#x5F53;&#x524D;&#x5E94;&#x7528;&#x7684;<code>application.name</code>,</p>
@@ -1238,7 +1236,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第1节：bootstap启动文件","level":"1.5.1","depth":2,"next":{"title":"第2节：应用三件套","level":"1.5.2","depth":2,"path":"common_config_project/应用三件套.md","ref":"common_config_project/应用三件套.md","articles":[]},"previous":{"title":"第三章: 项目配置检查","level":"1.5","depth":1,"path":"common_config_project/常用配置集合.md","ref":"common_config_project/常用配置集合.md","articles":[{"title":"第1节：bootstap启动文件","level":"1.5.1","depth":2,"path":"common_config_project/bootstrap.xml配置.md","ref":"common_config_project/bootstrap.xml配置.md","articles":[]},{"title":"第2节：应用三件套","level":"1.5.2","depth":2,"path":"common_config_project/应用三件套.md","ref":"common_config_project/应用三件套.md","articles":[]},{"title":"第3节：consul配置","level":"1.5.3","depth":2,"path":"common_config_project/consul配置.md","ref":"common_config_project/consul配置.md","articles":[]},{"title":"第4节：数据库配置.md","level":"1.5.4","depth":2,"path":"common_config_project/数据库配置.md","ref":"common_config_project/数据库配置.md","articles":[]},{"title":"第5节：mybatis-plus配置.md","level":"1.5.5","depth":2,"path":"common_config_project/mybatis_plus配置.md","ref":"common_config_project/mybatis_plus配置.md","articles":[]},{"title":"第6节：远程服务调用时长配置","level":"1.5.6","depth":2,"path":"common_config_project/远程服务调用时长配置.md","ref":"common_config_project/远程服务调用时长配置.md","articles":[]},{"title":"第7节：其他项目配置","level":"1.5.7","depth":2,"path":"common_config_project/其他项目配置.md","ref":"common_config_project/其他项目配置.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"common_config_project/bootstrap.xml配置.md","mtime":"2019-04-19T03:06:08.847Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-19T10:29:11.556Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第1节：bootstap启动文件","level":"1.5.1","depth":2,"next":{"title":"第2节：应用三件套","level":"1.5.2","depth":2,"path":"common_config_project/应用三件套.md","ref":"common_config_project/应用三件套.md","articles":[]},"previous":{"title":"第三章: 项目配置检查","level":"1.5","depth":1,"path":"common_config_project/常用配置集合.md","ref":"common_config_project/常用配置集合.md","articles":[{"title":"第1节：bootstap启动文件","level":"1.5.1","depth":2,"path":"common_config_project/bootstrap.xml配置.md","ref":"common_config_project/bootstrap.xml配置.md","articles":[]},{"title":"第2节：应用三件套","level":"1.5.2","depth":2,"path":"common_config_project/应用三件套.md","ref":"common_config_project/应用三件套.md","articles":[]},{"title":"第3节：consul配置","level":"1.5.3","depth":2,"path":"common_config_project/consul配置.md","ref":"common_config_project/consul配置.md","articles":[]},{"title":"第4节：数据库配置.md","level":"1.5.4","depth":2,"path":"common_config_project/数据库配置.md","ref":"common_config_project/数据库配置.md","articles":[]},{"title":"第5节：mybatis-plus配置.md","level":"1.5.5","depth":2,"path":"common_config_project/mybatis_plus配置.md","ref":"common_config_project/mybatis_plus配置.md","articles":[]},{"title":"第6节：远程服务调用时长配置","level":"1.5.6","depth":2,"path":"common_config_project/远程服务调用时长配置.md","ref":"common_config_project/远程服务调用时长配置.md","articles":[]},{"title":"第7节：其他项目配置","level":"1.5.7","depth":2,"path":"common_config_project/其他项目配置.md","ref":"common_config_project/其他项目配置.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"common_config_project/bootstrap.xml配置.md","mtime":"2019-04-20T04:26:27.986Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-20T04:53:09.428Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

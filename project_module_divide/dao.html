@@ -497,9 +497,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.2" data-path="../project_begin_end/访问中台api.md">
+        <li class="chapter " data-level="1.7.2" data-path="../project_begin_end/使用中台api.html">
             
-                <span>
+                <a href="../project_begin_end/使用中台api.html">
             
                     
                     第2节：访问中台api
@@ -1137,55 +1137,52 @@
                                 <h1 id="dao">dao</h1>
 <p>dao&#x5C42;&#xFF0C;&#x5728;&#x76EE;&#x524D;&#x67B6;&#x6784;&#x4E2D;&#xFF0C;&#x4EC5;&#x7528;&#x6765;&#x5B58;&#x653E;mybatis&#x4E2D;&#x7684;dao&#x3002;</p>
 <ul>
-<li>&#x793A;&#x4F8B;
-```
-@Mapper
-public interface UcUserDao extends BaseMapper<ucuserentity> {
-  /**<ul>
-<li>&#x901A;&#x8FC7;&#x8D26;&#x53F7;&#x67E5;&#x8BE2;&#x7528;&#x6237;&#x4FE1;&#x606F;
-*</li>
-<li>@param username &#x7528;&#x6237;&#x540D;</li>
-<li>@return
-*/
-UcUserEntity selectByUsername(@Param(&quot;username&quot;) String username);</li>
+<li><p>&#x793A;&#x4F8B;</p>
+<pre><code>@Mapper
+public interface UcUserDao extends BaseMapper&lt;UcUserEntity&gt; {
+  /**
+   * &#x901A;&#x8FC7;&#x8D26;&#x53F7;&#x67E5;&#x8BE2;&#x7528;&#x6237;&#x4FE1;&#x606F;
+   *
+   * @param username &#x7528;&#x6237;&#x540D;
+   * @return
+   */
+  UcUserEntity selectByUsername(@Param(&quot;username&quot;) String username);
+
+  /**
+   * &#x901A;&#x8FC7;&#x7528;&#x6237;&#x624B;&#x673A;&#x53F7;&#x67E5;&#x8BE2;&#x7528;&#x6237;&#x4FE1;&#x606F;
+   *
+   * @param phone    &#x7528;&#x6237;&#x8D26;&#x53F7;
+   * @param platform &#x5E73;&#x53F0;
+   * @return
+   */
+  UcUserEntity findUserByPhoneAndPlatform(@Param(&quot;phone&quot;) String phone,
+                                          @Param(&quot;platform_name&quot;) String platform);
+
+  /**
+   * userId&#x6279;&#x91CF;&#x67E5;&#x8BE2;
+   *
+   * @param userIds userIds
+   * @return
+   * @author shaohua
+   * @date
+   **/
+  List&lt;UcUserEntity&gt; findByUserIds(String... userIds);
+
+  /**
+   * &#x591A;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;&#x7528;&#x6237;&#x4FE1;&#x606F;
+   *
+   * @param username     &#x7528;&#x6237;&#x540D;(&#x7528;&#x6237;&#x624B;&#x673A;&#x53F7;|&#x7528;&#x6237;&#x540D;)
+   * @param realName     &#x7528;&#x6237;&#x771F;&#x5B9E;&#x59D3;&#x540D;
+   * @throws
+   * @author shaohua
+   * @date 2019/2/27 19:31
+   */
+  List&lt;UcUserPlatformPO&gt; findByUsers(@Param(&quot;username&quot;) String username,
+                                     @Param(&quot;realName&quot;) String realName);
+}
+</code></pre></li>
 </ul>
-</ucuserentity></li>
-</ul>
-<pre><code>   /**
-    * &#x901A;&#x8FC7;&#x7528;&#x6237;&#x624B;&#x673A;&#x53F7;&#x67E5;&#x8BE2;&#x7528;&#x6237;&#x4FE1;&#x606F;
-    *
-    * @param phone    &#x7528;&#x6237;&#x8D26;&#x53F7;
-    * @param platform &#x5E73;&#x53F0;
-    * @return
-    */
-   UcUserEntity findUserByPhoneAndPlatform(@Param(&quot;phone&quot;) String phone,
-                                           @Param(&quot;platform_name&quot;) String platform);
 
-   /**
-    * userId&#x6279;&#x91CF;&#x67E5;&#x8BE2;
-    *
-    * @param userIds userIds
-    * @return
-    * @author shaohua
-    * @date
-    **/
-   List&lt;UcUserEntity&gt; findByUserIds(String... userIds);
-
-
-   /**
-    * &#x591A;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;&#x7528;&#x6237;&#x4FE1;&#x606F;
-    *
-    * @param username     &#x7528;&#x6237;&#x540D;(&#x7528;&#x6237;&#x624B;&#x673A;&#x53F7;|&#x7528;&#x6237;&#x540D;)
-    * @param realName     &#x7528;&#x6237;&#x771F;&#x5B9E;&#x59D3;&#x540D;
-    * @throws
-    * @author shaohua
-    * @date 2019/2/27 19:31
-    */
-   List&lt;UcUserPlatformPO&gt; findByUsers(@Param(&quot;username&quot;) String username,
-                                      @Param(&quot;realName&quot;) String realName);
-</code></pre><p>   }</p>
-<pre><code>```
-</code></pre>
                                 
                                 </section>
                             
@@ -1228,7 +1225,7 @@ UcUserEntity selectByUsername(@Param(&quot;username&quot;) String username);</li
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第3节：dao","level":"1.6.3","depth":2,"next":{"title":"第4节：data.service","level":"1.6.4","depth":2,"path":"project_module_divide/data.service.md","ref":"project_module_divide/data.service.md","articles":[]},"previous":{"title":"第2节：constant","level":"1.6.2","depth":2,"path":"project_module_divide/constant.md","ref":"project_module_divide/constant.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"project_module_divide/dao.md","mtime":"2019-04-19T06:48:17.789Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-19T10:29:11.556Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第3节：dao","level":"1.6.3","depth":2,"next":{"title":"第4节：data.service","level":"1.6.4","depth":2,"path":"project_module_divide/data.service.md","ref":"project_module_divide/data.service.md","articles":[]},"previous":{"title":"第2节：constant","level":"1.6.2","depth":2,"path":"project_module_divide/constant.md","ref":"project_module_divide/constant.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"project_module_divide/dao.md","mtime":"2019-04-20T04:30:19.531Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-20T04:53:09.428Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

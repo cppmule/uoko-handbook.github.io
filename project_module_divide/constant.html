@@ -497,9 +497,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.2" data-path="../project_begin_end/访问中台api.md">
+        <li class="chapter " data-level="1.7.2" data-path="../project_begin_end/使用中台api.html">
             
-                <span>
+                <a href="../project_begin_end/使用中台api.html">
             
                     
                     第2节：访问中台api
@@ -1137,121 +1137,73 @@
                                 <h1 id="constant">constant</h1>
 <p>constant&#x6839;&#x636E;&#x5B83;&#x7684;&#x610F;&#x601D;&#x201C;&#x4E0D;&#x53D8;&#x7684;&#x201D;&#xFF0C;&#x8FD9;&#x4E2A;&#x76EE;&#x5F55;&#x7528;&#x6765;&#x5B58;&#x653E;&#x5168;&#x90E8;&#x9759;&#x6001;&#x5E38;&#x91CF;&#x3002;</p>
 <ul>
-<li><p>&#x6848;&#x4F8B;
- ```
- public interface SecurityConstants {</p>
-<pre><code> /**
-  * &#x624B;&#x673A;&#x53F7;&#x6388;&#x6743;&#x5730;&#x5740;
-  */
- String MOBILE_TOKEN_URL = &quot;/mobile/token&quot;;
+<li><p>&#x6848;&#x4F8B;</p>
+<pre><code> public interface SecurityConstants {
+     /**
+      * &#x624B;&#x673A;&#x53F7;&#x6388;&#x6743;&#x5730;&#x5740;
+      */
+     String MOBILE_TOKEN_URL = &quot;/mobile/token&quot;;
 
- /**
-  * &#x624B;&#x673A;&#x53F7;&#x6388;&#x6743;&#x5730;&#x5740;
-  */
- String OPENID_TOKEN_URL = &quot;/openid/token&quot;;
- /**
-  * &#x5BC6;&#x7801;+&#x8D26;&#x53F7;&#x6388;&#x6743;&#x5730;&#x5740;
-  */
- String USERNAME_TOKEN_URL = &quot;/username/token&quot;;
+     /**
+      * &#x624B;&#x673A;&#x53F7;&#x6388;&#x6743;&#x5730;&#x5740;
+      */
+     String OPENID_TOKEN_URL = &quot;/openid/token&quot;;
+     /**
+      * &#x5BC6;&#x7801;+&#x8D26;&#x53F7;&#x6388;&#x6743;&#x5730;&#x5740;
+      */
+     String USERNAME_TOKEN_URL = &quot;/username/token&quot;;
 
- /**
-  * &#x643A;&#x5E26;&#x4E09;&#x65B9;token&#x6388;&#x6743;&#x5730;&#x5740;
-  */
- String HTTP_TOKEN_URL = &quot;/http/token&quot;;
+     /**
+      * &#x643A;&#x5E26;&#x4E09;&#x65B9;token&#x6388;&#x6743;&#x5730;&#x5740;
+      */
+     String HTTP_TOKEN_URL = &quot;/http/token&quot;;
 
- /**
-  * username &#x6388;&#x6743;&#x5730;&#x5740;
-  */
- String OAUTH2_TOKEN_URL = &quot;/oauth/token&quot;;
+     /**
+      * username &#x6388;&#x6743;&#x5730;&#x5740;
+      */
+     String OAUTH2_TOKEN_URL = &quot;/oauth/token&quot;;
 
- /**
-  * &#x5220;&#x9664;
-  */
- String STATUS_DEL = &quot;1&quot;;
- /**
-  * &#x6B63;&#x5E38;
-  */
- String STATUS_NORMAL = &quot;0&quot;;
+     /**
+      * &#x5220;&#x9664;
+      */
+     String STATUS_DEL = &quot;1&quot;;
+     /**
+      * &#x6B63;&#x5E38;
+      */
+     String STATUS_NORMAL = &quot;0&quot;;
 
- /**
-  * &#x9501;&#x5B9A;
-  */
- String STATUS_LOCK = &quot;9&quot;;
+     /**
+      * &#x9501;&#x5B9A;
+      */
+     String STATUS_LOCK = &quot;9&quot;;
 
- /**
-  * token-uservo
-  */
- String TOKEN_USER_DETAIL = &quot;token-user-detail&quot;;
- /**
-  * token&#x8BF7;&#x6C42;&#x5934;&#x540D;&#x79F0;
-  */
- String REQ_HEADER = &quot;Authorization&quot;;
+     /**
+      * token-uservo
+      */
+     String TOKEN_USER_DETAIL = &quot;token-user-detail&quot;;
+     /**
+      * token&#x8BF7;&#x6C42;&#x5934;&#x540D;&#x79F0;
+      */
+     String REQ_HEADER = &quot;Authorization&quot;;
 
- /**
-  * token&#x5206;&#x5272;&#x7B26;
-  */
- String TOKEN_SPLIT = &quot;Bearer &quot;;
+     /**
+      * token&#x5206;&#x5272;&#x7B26;
+      */
+     String TOKEN_SPLIT = &quot;Bearer &quot;;
 
- /**
-  * jwt&#x7B7E;&#x540D;
-  */
- String SIGN_KEY = &quot;UOKO&quot;;
+     /**
+      * jwt&#x7B7E;&#x540D;
+      */
+     String SIGN_KEY = &quot;UOKO&quot;;
 
- /**
-  * &#x8DEF;&#x7531;&#x4FE1;&#x606F;Redis&#x4FDD;&#x5B58;&#x7684;key
-  */
- String ROUTE_KEY = &quot;_ROUTE_KEY&quot;;
+     /**
+      * &#x8DEF;&#x7531;&#x4FE1;&#x606F;Redis&#x4FDD;&#x5B58;&#x7684;key
+      */
+     String ROUTE_KEY = &quot;_ROUTE_KEY&quot;;
+ }
 </code></pre></li>
 </ul>
-<pre><code>    /**
-     * &#x57FA;&#x7840;&#x7528;&#x6237;
-     */
-    String BASE_ROLE = &quot;ROLE_USER&quot;;
 
-    /**
-     * &#x6388;&#x6743;&#x7801;&#x6A21;&#x5F0F;
-     */
-    String AUTHORIZATION_CODE = &quot;authorization_code&quot;;
-    /**
-     * &#x5BC6;&#x7801;&#x6A21;&#x5F0F;
-     */
-    String PASSWORD = &quot;password&quot;;
-    /**
-     *
-     */
-    String GRANT_TYPE = &quot;grant_type&quot;;
-    /**
-     * &#x5237;&#x65B0;token
-     */
-    String REFRESH_TOKEN = &quot;refreshToken&quot;;
-
-    /**
-     * oauth token
-     */
-    String OAUTH_TOKEN_URL = &quot;/oauth/**&quot;;
-
-    /**
-     * LICENSE
-     */
-    String LICENSE = &quot;MADE BY UOKO&quot;;
-
-    /**
-     * &#x5B58;&#x653E;token&#x7684;redis&#x524D;&#x7F00;
-     */
-    String TOKEN_REDIS_PREFIX = &quot;uk_token_&quot;;
-    /**
-     * &#x5BA2;&#x6237;&#x7AEF;&#x52A0;&#x5BC6;&#x5934;&#x90E8;
-     */
-    String BASIC_ = &quot;Basic &quot;;
-
-    /**
-     * &#x5E94;&#x7528;&#x540D;&#x79F0;
-     */
-    String APPLICATION_NAME = &quot;uoko_framework_auth&quot;;
-
-}
-```
-</code></pre>
                                 
                                 </section>
                             
@@ -1294,7 +1246,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第2节：constant","level":"1.6.2","depth":2,"next":{"title":"第3节：dao","level":"1.6.3","depth":2,"path":"project_module_divide/dao.md","ref":"project_module_divide/dao.md","articles":[]},"previous":{"title":"第1节：config","level":"1.6.1","depth":2,"path":"project_module_divide/config.md","ref":"project_module_divide/config.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"project_module_divide/constant.md","mtime":"2019-04-19T06:44:39.958Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-19T10:29:11.556Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第2节：constant","level":"1.6.2","depth":2,"next":{"title":"第3节：dao","level":"1.6.3","depth":2,"path":"project_module_divide/dao.md","ref":"project_module_divide/dao.md","articles":[]},"previous":{"title":"第1节：config","level":"1.6.1","depth":2,"path":"project_module_divide/config.md","ref":"project_module_divide/config.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"project_module_divide/constant.md","mtime":"2019-04-20T04:29:28.645Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-20T04:53:09.428Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

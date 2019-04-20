@@ -497,9 +497,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.2" data-path="../project_begin_end/访问中台api.md">
+        <li class="chapter " data-level="1.7.2" data-path="../project_begin_end/使用中台api.html">
             
-                <span>
+                <a href="../project_begin_end/使用中台api.html">
             
                     
                     第2节：访问中台api
@@ -1137,56 +1137,57 @@
                                 <h1 id="settingxml">setting.xml</h1>
 <p>setting.xml&#xFF0C;&#x662F;&#x4E2A;&#x6BD4;&#x8F83;&#x91CD;&#x8981;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x5B83;&#x7BA1;&#x7406;&#x8005;&#x6211;&#x4EEC;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x5730;&#x5740;&#x3001;&#x8D26;&#x53F7;&#x3001;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x5730;&#x5740;&#x7B49;&#x4FE1;&#x606F;&#x3002;</p>
 <ul>
-<li>setting.xml &#x6587;&#x4EF6;
-```
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</li>
+<li><p>setting.xml &#x6587;&#x4EF6;</p>
+<pre><code>  &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+
+  &lt;settings xmlns=&quot;http://maven.apache.org/SETTINGS/1.0.0&quot;
+            xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+            xsi:schemaLocation=&quot;http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd&quot;&gt;
+
+      &lt;localRepository&gt;C:/software/java/maven/repository&lt;/localRepository&gt;
+
+      &lt;servers&gt;
+          &lt;server&gt;
+              &lt;id&gt;nexus-releases&lt;/id&gt;
+              &lt;username&gt;uoko&lt;/username&gt;
+              &lt;password&gt;P@ssw0rd&lt;/password&gt;
+          &lt;/server&gt;
+      &lt;/servers&gt;
+
+      &lt;mirrors&gt;
+          &lt;mirror&gt;
+              &lt;id&gt;mirrorId&lt;/id&gt;
+              &lt;mirrorOf&gt;repositoryId&lt;/mirrorOf&gt;
+              &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
+              &lt;url&gt;http://my.repository.com/repo/path&lt;/url&gt;
+          &lt;/mirror&gt;
+
+          &lt;mirror&gt;
+              &lt;id&gt;nexus-uoko&lt;/id&gt;
+              &lt;mirrorOf&gt;aliyun&lt;/mirrorOf&gt;
+              &lt;name&gt;uoko aliyun repository&lt;/name&gt;
+              &lt;url&gt;http://172.16.0.141:8081/nexus/content/groups/public/&lt;/url&gt;
+          &lt;/mirror&gt;
+      &lt;/mirrors&gt;
+
+      &lt;profiles&gt;
+          &lt;profile&gt;
+              &lt;id&gt;jdk-1.8&lt;/id&gt;
+              &lt;activation&gt;
+                  &lt;activeByDefault&gt;true&lt;/activeByDefault&gt;
+                  &lt;jdk&gt;1.8&lt;/jdk&gt;
+              &lt;/activation&gt;
+              &lt;properties&gt;
+                  &lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;
+                  &lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;
+                  &lt;maven.compiler.compilerVersion&gt;1.8&lt;/maven.compiler.compilerVersion&gt;
+              &lt;/properties&gt;
+          &lt;/profile&gt;
+      &lt;/profiles&gt;
+
+  &lt;/settings&gt;
+</code></pre></li>
 </ul>
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
-
-    <localrepository>C:/software/java/maven/repository</localrepository>
-
-    <servers>
-        <server>
-            <id>nexus-releases</id>
-            <username>uoko</username>
-            <password>P@ssw0rd</password>
-        </server>
-    </servers>
-
-    <mirrors>
-        <mirror>
-            <id>mirrorId</id>
-            <mirrorof>repositoryId</mirrorof>
-            <name>Human Readable Name for this Mirror.</name>
-            <url>http://my.repository.com/repo/path</url>
-        </mirror>
-
-        <mirror>
-            <id>nexus-uoko</id>
-            <mirrorof>aliyun</mirrorof>
-            <name>uoko aliyun repository</name>
-            <url>http://172.16.0.141:8081/nexus/content/groups/public/</url>
-        </mirror>
-    </mirrors>
-
-    <profiles>
-        <profile>
-            <id>jdk-1.8</id>
-            <activation>
-                <activebydefault>true</activebydefault>
-                <jdk>1.8</jdk>
-            </activation>
-            <properties>
-                <maven.compiler.source>1.8</maven.compiler.source>
-                <maven.compiler.target>1.8</maven.compiler.target>
-                <maven.compiler.compilerversion>1.8</maven.compiler.compilerversion>
-            </properties>
-        </profile>
-    </profiles>
-
-</settings>
-
-<p>```   </p>
 
                                 
                                 </section>
@@ -1230,7 +1231,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第1节：setting.xml","level":"1.10.1","depth":2,"next":{"title":"第2节：架构封装基础包","level":"1.10.2","depth":2,"path":"maven_handbook/架构封装基础包.md","ref":"maven_handbook/架构封装基础包.md","articles":[]},"previous":{"title":"第七章: maven万能手册","level":"1.10","depth":1,"path":"maven_handbook/maven万能手册.md","ref":"maven_handbook/maven万能手册.md","articles":[{"title":"第1节：setting.xml","level":"1.10.1","depth":2,"path":"maven_handbook/setting.xml.md","ref":"maven_handbook/setting.xml.md","articles":[]},{"title":"第2节：架构封装基础包","level":"1.10.2","depth":2,"path":"maven_handbook/架构封装基础包.md","ref":"maven_handbook/架构封装基础包.md","articles":[]},{"title":"第3节：第三方依赖包","level":"1.10.3","depth":2,"path":"maven_handbook/第三方依赖包.md","ref":"maven_handbook/第三方依赖包.md","articles":[]},{"title":"第4节：如何上传三方依赖.jar包","level":"1.10.4","depth":2,"path":"maven_handbook/如何上传三方依赖.jar包.md","ref":"maven_handbook/如何上传三方依赖.jar包.md","articles":[]},{"title":"第5节：maven 常用命令","level":"1.10.5","depth":2,"path":"maven_handbook/maven常用命令.md","ref":"maven_handbook/maven常用命令.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"maven_handbook/setting.xml.md","mtime":"2019-04-19T07:44:57.743Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-19T10:29:11.556Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第1节：setting.xml","level":"1.10.1","depth":2,"next":{"title":"第2节：架构封装基础包","level":"1.10.2","depth":2,"path":"maven_handbook/架构封装基础包.md","ref":"maven_handbook/架构封装基础包.md","articles":[]},"previous":{"title":"第七章: maven万能手册","level":"1.10","depth":1,"path":"maven_handbook/maven万能手册.md","ref":"maven_handbook/maven万能手册.md","articles":[{"title":"第1节：setting.xml","level":"1.10.1","depth":2,"path":"maven_handbook/setting.xml.md","ref":"maven_handbook/setting.xml.md","articles":[]},{"title":"第2节：架构封装基础包","level":"1.10.2","depth":2,"path":"maven_handbook/架构封装基础包.md","ref":"maven_handbook/架构封装基础包.md","articles":[]},{"title":"第3节：第三方依赖包","level":"1.10.3","depth":2,"path":"maven_handbook/第三方依赖包.md","ref":"maven_handbook/第三方依赖包.md","articles":[]},{"title":"第4节：如何上传三方依赖.jar包","level":"1.10.4","depth":2,"path":"maven_handbook/如何上传三方依赖.jar包.md","ref":"maven_handbook/如何上传三方依赖.jar包.md","articles":[]},{"title":"第5节：maven 常用命令","level":"1.10.5","depth":2,"path":"maven_handbook/maven常用命令.md","ref":"maven_handbook/maven常用命令.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"maven_handbook/setting.xml.md","mtime":"2019-04-20T04:35:20.423Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-20T04:53:09.428Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

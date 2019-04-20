@@ -32,7 +32,6 @@ core层service，在目前架构中定义成：用来实现`uoko-xxx-xxx-api`中
        @Autowired
        private UcUserPlatformDataService ucUserPlatformDataService;
        
-   
        @ApiOperation("用户id查询用户信息")
        @ApiImplicitParam(value = "用户id", name = "userId", dataType = "Long", example = "12111")
        @GetMapping("{userId}")
@@ -55,7 +54,6 @@ core层service，在目前架构中定义成：用来实现`uoko-xxx-xxx-api`中
            userDTO.setUcExtraDTO(ucExtraDTO);
            return userDTO;
        }
-   
    
        /**
         * 用户存在，不存在授权的账号
@@ -89,7 +87,6 @@ core层service，在目前架构中定义成：用来实现`uoko-xxx-xxx-api`中
                return insertUserInfo(userDTO);
            }
        }
-   
     } 
 
   ```

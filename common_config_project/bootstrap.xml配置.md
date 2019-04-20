@@ -1,6 +1,9 @@
-# bootstap.xml配置
+# bootstrap.xml配置
 
 bootstrap.xml 在目前微服务启动时，用来获取远程配置，并覆盖本地配置的文件。
+
+**注意事项：在 base 1.1.4.RELEASE bootstrap.xml 
+文件线上部署的使用的 prod 目录下的文件**
 
 * 开发环境(dev)
     
@@ -44,7 +47,6 @@ bootstrap.xml 在目前微服务启动时，用来获取远程配置，并覆盖
    在目前的环境配置中，需要走config配置中心，因此需要开启config中心获取配置阈`enabled: true`,
    将uri修改成对应的环境config配置中心地址。最后比较总要的是检查name是否是当前应用的`application.name`,
  
-   
     ```
       spring:
         cloud:

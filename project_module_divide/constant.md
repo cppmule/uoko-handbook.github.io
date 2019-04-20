@@ -66,54 +66,6 @@ constant根据它的意思“不变的”，这个目录用来存放全部静态
          * 路由信息Redis保存的key
          */
         String ROUTE_KEY = "_ROUTE_KEY";
-    
-    
-        /**
-         * 基础用户
-         */
-        String BASE_ROLE = "ROLE_USER";
-    
-        /**
-         * 授权码模式
-         */
-        String AUTHORIZATION_CODE = "authorization_code";
-        /**
-         * 密码模式
-         */
-        String PASSWORD = "password";
-        /**
-         *
-         */
-        String GRANT_TYPE = "grant_type";
-        /**
-         * 刷新token
-         */
-        String REFRESH_TOKEN = "refreshToken";
-    
-        /**
-         * oauth token
-         */
-        String OAUTH_TOKEN_URL = "/oauth/**";
-    
-        /**
-         * LICENSE
-         */
-        String LICENSE = "MADE BY UOKO";
-    
-        /**
-         * 存放token的redis前缀
-         */
-        String TOKEN_REDIS_PREFIX = "uk_token_";
-        /**
-         * 客户端加密头部
-         */
-        String BASIC_ = "Basic ";
-    
-        /**
-         * 应用名称
-         */
-        String APPLICATION_NAME = "uoko_framework_auth";
-    
     }
     ```
 
