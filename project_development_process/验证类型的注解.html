@@ -1,0 +1,1420 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第3节：验证类型 的注解 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="ORM注解.html" />
+    
+    
+    <link rel="prev" href="请求有关的注解.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../uoko_architecture/价值几个亿的架构简介.html">
+            
+                <a href="../uoko_architecture/价值几个亿的架构简介.html">
+            
+                    
+                    第一章: UOKO架构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../uoko_architecture/ELK亿万级日志系统.html">
+            
+                <a href="../uoko_architecture/ELK亿万级日志系统.html">
+            
+                    
+                    第1节：ELK亿万级日志系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../uoko_architecture/无时无刻健康检测之Prometheus.html">
+            
+                <a href="../uoko_architecture/无时无刻健康检测之Prometheus.html">
+            
+                    
+                    第2节：无时无刻健康检测之Prometheus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../uoko_architecture/运动轨迹Zipkin.html">
+            
+                <a href="../uoko_architecture/运动轨迹Zipkin.html">
+            
+                    
+                    第3节：运动轨迹Zipkin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../how_begin_one_project/如何开始一个项目.html">
+            
+                <a href="../how_begin_one_project/如何开始一个项目.html">
+            
+                    
+                    第二章: 如何开始一个项目
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../how_begin_one_project/中台服务.html">
+            
+                <a href="../how_begin_one_project/中台服务.html">
+            
+                    
+                    第1节：中台服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../how_begin_one_project/前台业务服务.html">
+            
+                <a href="../how_begin_one_project/前台业务服务.html">
+            
+                    
+                    第2节：前台业务服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../common_config_project/常用配置集合.html">
+            
+                <a href="../common_config_project/常用配置集合.html">
+            
+                    
+                    第三章: 项目配置检查
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../common_config_project/bootstrap.xml配置.html">
+            
+                <a href="../common_config_project/bootstrap.xml配置.html">
+            
+                    
+                    第1节：bootstap启动文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../common_config_project/应用三件套.html">
+            
+                <a href="../common_config_project/应用三件套.html">
+            
+                    
+                    第2节：应用三件套
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../common_config_project/consul配置.html">
+            
+                <a href="../common_config_project/consul配置.html">
+            
+                    
+                    第3节：consul配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../common_config_project/数据库配置.html">
+            
+                <a href="../common_config_project/数据库配置.html">
+            
+                    
+                    第4节：数据库配置.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../common_config_project/mybatis_plus配置.html">
+            
+                <a href="../common_config_project/mybatis_plus配置.html">
+            
+                    
+                    第5节：mybatis-plus配置.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../common_config_project/远程服务调用时长配置.html">
+            
+                <a href="../common_config_project/远程服务调用时长配置.html">
+            
+                    
+                    第6节：远程服务调用时长配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../common_config_project/其他项目配置.html">
+            
+                <a href="../common_config_project/其他项目配置.html">
+            
+                    
+                    第7节：其他项目配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../project_module_divide/项目模块功能划分.html">
+            
+                <a href="../project_module_divide/项目模块功能划分.html">
+            
+                    
+                    第四章: 项目模块功能划分
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../project_module_divide/config.html">
+            
+                <a href="../project_module_divide/config.html">
+            
+                    
+                    第1节：config
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../project_module_divide/constant.html">
+            
+                <a href="../project_module_divide/constant.html">
+            
+                    
+                    第2节：constant
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../project_module_divide/dao.html">
+            
+                <a href="../project_module_divide/dao.html">
+            
+                    
+                    第3节：dao
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../project_module_divide/data.service.html">
+            
+                <a href="../project_module_divide/data.service.html">
+            
+                    
+                    第4节：data.service
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../project_module_divide/service.html">
+            
+                <a href="../project_module_divide/service.html">
+            
+                    
+                    第5节：service
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.5.1" data-path="../project_module_divide/core层service.html">
+            
+                <a href="../project_module_divide/core层service.html">
+            
+                    
+                    1：core层service
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.2" data-path="../project_module_divide/biz层service.html">
+            
+                <a href="../project_module_divide/biz层service.html">
+            
+                    
+                    2：biz层service
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../project_module_divide/mapper.html">
+            
+                <a href="../project_module_divide/mapper.html">
+            
+                    
+                    第6节：mapper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../project_module_divide/util.html">
+            
+                <a href="../project_module_divide/util.html">
+            
+                    
+                    第7节：util
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../project_begin_end/项目有始有终.html">
+            
+                <a href="../project_begin_end/项目有始有终.html">
+            
+                    
+                    第五章: 项目有始有终
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../project_begin_end/发布uoko-xxx-api.html">
+            
+                <a href="../project_begin_end/发布uoko-xxx-api.html">
+            
+                    
+                    第1节：发布uoko-xxx-api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../project_begin_end/使用中台api.html">
+            
+                <a href="../project_begin_end/使用中台api.html">
+            
+                    
+                    第2节：访问中台api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../project_begin_end/启动项目.html">
+            
+                <a href="../project_begin_end/启动项目.html">
+            
+                    
+                    第3节：启动项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="项目开发过程案例.html">
+            
+                <a href="项目开发过程案例.html">
+            
+                    
+                    第六章：项目开发过程案例
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="自研注解.html">
+            
+                <a href="自研注解.html">
+            
+                    
+                    第1节：自研注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="spring注解.html">
+            
+                <a href="spring注解.html">
+            
+                    
+                    第2节：spring注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="请求有关的注解.html">
+            
+                <a href="请求有关的注解.html">
+            
+                    
+                    第3节：请求有关的注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.4" data-path="验证类型的注解.html">
+            
+                <a href="验证类型的注解.html">
+            
+                    
+                    第3节：验证类型 的注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="ORM注解.html">
+            
+                <a href="ORM注解.html">
+            
+                    
+                    第4节：ORM注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="SpringCloud常用注解.html">
+            
+                <a href="SpringCloud常用注解.html">
+            
+                    
+                    第4节：SpringCloud常用注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../core_business_server/中台、前台职责划分.html">
+            
+                <a href="../core_business_server/中台、前台职责划分.html">
+            
+                    
+                    第七章: 中台、前台职责划分
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../core_business_server/中台.html">
+            
+                <a href="../core_business_server/中台.html">
+            
+                    
+                    第1节：中台
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1.1" data-path="../core_business_server/uoko-platform-xxx-api.html">
+            
+                <a href="../core_business_server/uoko-platform-xxx-api.html">
+            
+                    
+                    1：uoko-platform-xxx-api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.1.2" data-path="../core_business_server/uoko-platform-xxx-core.html">
+            
+                <a href="../core_business_server/uoko-platform-xxx-core.html">
+            
+                    
+                    2：uoko-platform-xxx-core
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.1.3" data-path="../core_business_server/uoko-platform-xxx-stater.html">
+            
+                <a href="../core_business_server/uoko-platform-xxx-stater.html">
+            
+                    
+                    3：uoko-platform-xxx-stater
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../core_business_server/前台.html">
+            
+                <a href="../core_business_server/前台.html">
+            
+                    
+                    第2节：前台
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.2.1" data-path="../core_business_server/uoko-module-xxx-api.html">
+            
+                <a href="../core_business_server/uoko-module-xxx-api.html">
+            
+                    
+                    1：uoko-module-xxx-api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2.2" data-path="../core_business_server/uoko-module-xxx-core.html">
+            
+                <a href="../core_business_server/uoko-module-xxx-core.html">
+            
+                    
+                    2：uoko-module-xxx-core
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2.3" data-path="../core_business_server/uoko-module-xxx-biz.html">
+            
+                <a href="../core_business_server/uoko-module-xxx-biz.html">
+            
+                    
+                    3：uoko-module-xxx-biz
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2.4" data-path="../core_business_server/uoko-module-xxx-webapi.html">
+            
+                <a href="../core_business_server/uoko-module-xxx-webapi.html">
+            
+                    
+                    4：uoko-module-xxx-webapi
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../maven_handbook/maven万能手册.html">
+            
+                <a href="../maven_handbook/maven万能手册.html">
+            
+                    
+                    第七章: maven万能手册
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../maven_handbook/setting.xml.html">
+            
+                <a href="../maven_handbook/setting.xml.html">
+            
+                    
+                    第1节：setting.xml
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../maven_handbook/架构封装基础包.html">
+            
+                <a href="../maven_handbook/架构封装基础包.html">
+            
+                    
+                    第2节：架构封装基础包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../maven_handbook/第三方依赖包.html">
+            
+                <a href="../maven_handbook/第三方依赖包.html">
+            
+                    
+                    第3节：第三方依赖包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../maven_handbook/如何上传三方依赖.jar包.html">
+            
+                <a href="../maven_handbook/如何上传三方依赖.jar包.html">
+            
+                    
+                    第4节：如何上传三方依赖.jar包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../maven_handbook/maven常用命令.html">
+            
+                <a href="../maven_handbook/maven常用命令.html">
+            
+                    
+                    第5节：maven 常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../server_standard/服务器规范.html">
+            
+                <a href="../server_standard/服务器规范.html">
+            
+                    
+                    第八章：服务器规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../architecture_gather/架构组件集合.html">
+            
+                <a href="../architecture_gather/架构组件集合.html">
+            
+                    
+                    第九章: 架构组件集合
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../architecture_gather/consul.html">
+            
+                <a href="../architecture_gather/consul.html">
+            
+                    
+                    第1节：consul
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../architecture_gather/elk.html">
+            
+                <a href="../architecture_gather/elk.html">
+            
+                    
+                    第2节：elk
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../architecture_gather/premothues+grafan.html">
+            
+                <a href="../architecture_gather/premothues+grafan.html">
+            
+                    
+                    第3节：premothues+granfan
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../architecture_gather/zipkin.html">
+            
+                <a href="../architecture_gather/zipkin.html">
+            
+                    
+                    第4节：zipkin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../release_all_environment/发布各个环境.html">
+            
+                <a href="../release_all_environment/发布各个环境.html">
+            
+                    
+                    第十章: 发布各个环境
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../release_all_environment/发布开发环境dev.html">
+            
+                <a href="../release_all_environment/发布开发环境dev.html">
+            
+                    
+                    第1节：发布开发环境(dev)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../release_all_environment/发布测试环境test.html">
+            
+                <a href="../release_all_environment/发布测试环境test.html">
+            
+                    
+                    第2节：发布测试环境(test)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../release_all_environment/发布预发布环境pre.html">
+            
+                <a href="../release_all_environment/发布预发布环境pre.html">
+            
+                    
+                    第3节：发布预发布环境(pre)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" data-path="../release_all_environment/发布线上环境prod.html">
+            
+                <a href="../release_all_environment/发布线上环境prod.html">
+            
+                    
+                    第4节：发布线上环境(prod)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../appear_bug/出问题啦.html">
+            
+                <a href="../appear_bug/出问题啦.html">
+            
+                    
+                    第十一章: 出问题啦？
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../appear_bug/架构出问题了找谁.html">
+            
+                <a href="../appear_bug/架构出问题了找谁.html">
+            
+                    
+                    第1节：架构出问题了找谁？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../appear_bug/架构有独特的见解找谁实现.html">
+            
+                <a href="../appear_bug/架构有独特的见解找谁实现.html">
+            
+                    
+                    第2节：架构有独特的见解找谁实现？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.3" data-path="../appear_bug/开发过程出现各种问题找谁.html">
+            
+                <a href="../appear_bug/开发过程出现各种问题找谁.html">
+            
+                    
+                    第3节：出现各种问题找谁？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.4" data-path="../appear_bug/项目负责人.html">
+            
+                <a href="../appear_bug/项目负责人.html">
+            
+                    
+                    第4节：项目负责人
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../based_component/基础组件.html">
+            
+                <a href="../based_component/基础组件.html">
+            
+                    
+                    第十二章: 基础组件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../based_component/基础组件列表.html">
+            
+                <a href="../based_component/基础组件列表.html">
+            
+                    
+                    第1节：基础组件列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../handbook_download/各种手册管理.html">
+            
+                <a href="../handbook_download/各种手册管理.html">
+            
+                    
+                    第十三章: 各种手册管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../handbook_download/开发环境服务器.html">
+            
+                <a href="../handbook_download/开发环境服务器.html">
+            
+                    
+                    第1节：开发环境服务器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.2" data-path="../handbook_download/各种组件、服务地址.html">
+            
+                <a href="../handbook_download/各种组件、服务地址.html">
+            
+                    
+                    第2节：各种组件、服务地址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.3" data-path="../handbook_download/工具下载.html">
+            
+                <a href="../handbook_download/工具下载.html">
+            
+                    
+                    第3节：工具下载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.4" data-path="../handbook_download/各种手册下载地址.html">
+            
+                <a href="../handbook_download/各种手册下载地址.html">
+            
+                    
+                    第3节：各种手册管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >第3节：验证类型 的注解</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x9A8C;&#x8BC1;&#x7C7B;&#x578B;&#x7684;&#x6CE8;&#x89E3;">&#x9A8C;&#x8BC1;&#x7C7B;&#x578B;&#x7684;&#x6CE8;&#x89E3;</h1>
+<ul>
+<li><p>&#x9A8C;&#x8BC1;&#x7C7B;&#x578B; &#x7684;&#x6CE8;&#x89E3;</p>
+<ul>
+<li><p>@Valid</p>
+<p>&#x8BE5;&#x6CE8;&#x89E3;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x5B57;&#x6BB5;&#x4E3A;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#x7684;&#x96C6;&#x5408;&#x6216;map&#x6216;&#x6570;&#x7EC4;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x6216;&#x8BE5;&#x5B57;&#x6BB5;&#x76F4;&#x63A5;&#x4E3A;&#x4E00;&#x4E2A;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x8FD9;&#x6837;&#x5728;&#x68C0;&#x67E5;&#x5F53;&#x524D;&#x5BF9;&#x8C61;&#x7684;&#x540C;&#x65F6;&#x4E5F;&#x4F1A;&#x68C0;&#x67E5;&#x8BE5;&#x5B57;&#x6BB5;&#x6240;&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;</p>
+</li>
+<li><p>@AssertTrue    </p>
+<p>&#x7528;&#x4E8E;boolean&#x5B57;&#x6BB5;&#xFF0C;&#x8BE5;&#x5B57;&#x6BB5;&#x53EA;&#x80FD;&#x4E3A;true  </p>
+</li>
+<li><p>@AssertFalse    </p>
+<p>&#x8BE5;&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x53EA;&#x80FD;&#x4E3A;false</p>
+</li>
+<li><p>@CreditCardNumber    </p>
+<p>&#x5BF9;&#x4FE1;&#x7528;&#x5361;&#x53F7;&#x8FDB;&#x884C;&#x4E00;&#x4E2A;&#x5927;&#x81F4;&#x7684;&#x9A8C;&#x8BC1;</p>
+</li>
+<li><p>@DecimalMax    </p>
+<p>&#x53EA;&#x80FD;&#x5C0F;&#x4E8E;&#x6216;&#x7B49;&#x4E8E;&#x8BE5;&#x503C;</p>
+</li>
+<li><p>@DecimalMin    </p>
+<p>&#x53EA;&#x80FD;&#x5927;&#x4E8E;&#x6216;&#x7B49;&#x4E8E;&#x8BE5;&#x503C;</p>
+</li>
+<li><p>@Digits(integer=,fraction=)    </p>
+<p> &#x68C0;&#x67E5;&#x662F;&#x5426;&#x662F;&#x4E00;&#x79CD;&#x6570;&#x5B57;&#x7684;&#x6574;&#x6570;&#x3001;&#x5206;&#x6570;,&#x5C0F;&#x6570;&#x4F4D;&#x6570;&#x7684;&#x6570;&#x5B57;</p>
+</li>
+<li><p>@Email    </p>
+<p>&#x68C0;&#x67E5;&#x662F;&#x5426;&#x662F;&#x4E00;&#x4E2A;&#x6709;&#x6548;&#x7684;email&#x5730;&#x5740;</p>
+</li>
+<li><p>@Future    </p>
+<p>&#x68C0;&#x67E5;&#x8BE5;&#x5B57;&#x6BB5;&#x7684;&#x65E5;&#x671F;&#x662F;&#x5426;&#x662F;&#x5C5E;&#x4E8E;&#x5C06;&#x6765;&#x7684;&#x65E5;&#x671F;</p>
+</li>
+<li><p>@Length(min=,max=)    </p>
+<p>&#x68C0;&#x67E5;&#x6240;&#x5C5E;&#x7684;&#x5B57;&#x6BB5;&#x7684;&#x957F;&#x5EA6;&#x662F;&#x5426;&#x5728;min&#x548C;max&#x4E4B;&#x95F4;,&#x53EA;&#x80FD;&#x7528;&#x4E8E;&#x5B57;&#x7B26;&#x4E32;</p>
+</li>
+<li><p>@Max    </p>
+<p>&#x8BE5;&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x53EA;&#x80FD;&#x5C0F;&#x4E8E;&#x6216;&#x7B49;&#x4E8E;&#x8BE5;&#x503C;</p>
+</li>
+<li><p>@Min    </p>
+<p>&#x8BE5;&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x53EA;&#x80FD;&#x5927;&#x4E8E;&#x6216;&#x7B49;&#x4E8E;&#x8BE5;&#x503C;</p>
+</li>
+<li><p>@NotNull    </p>
+<p>&#x4E0D;&#x80FD;&#x4E3A;null</p>
+</li>
+<li><p>@NotBlank    </p>
+<p>&#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;&#xFF0C;&#x68C0;&#x67E5;&#x65F6;&#x4F1A;&#x5C06;&#x7A7A;&#x683C;&#x5FFD;&#x7565;</p>
+</li>
+<li><p>@NotEmpty    </p>
+<p>&#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;&#x7A7A;&#x662F;&#x6307;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;</p>
+<ul>
+<li><p>@Null    </p>
+<p>&#x68C0;&#x67E5;&#x8BE5;&#x5B57;&#x6BB5;&#x4E3A;&#x7A7A;</p>
+</li>
+<li><p>@Past    </p>
+<p>&#x68C0;&#x67E5;&#x8BE5;&#x5B57;&#x6BB5;&#x7684;&#x65E5;&#x671F;&#x662F;&#x5728;&#x8FC7;&#x53BB;</p>
+</li>
+<li><p>@Pattern(regex=,flag=)    </p>
+<p>&#x88AB;&#x6CE8;&#x91CA;&#x7684;&#x5143;&#x7D20;&#x5FC5;&#x987B;&#x7B26;&#x5408;&#x6307;&#x5B9A;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;</p>
+</li>
+<li><p>@Range(min=,max=,message=)    </p>
+<p>&#x88AB;&#x6CE8;&#x91CA;&#x7684;&#x5143;&#x7D20;&#x5FC5;&#x987B;&#x5728;&#x5408;&#x9002;&#x7684;&#x8303;&#x56F4;&#x5185;</p>
+</li>
+<li><p>@Size(min=, max=)    </p>
+<p>&#x68C0;&#x67E5;&#x8BE5;&#x5B57;&#x6BB5;&#x7684;size&#x662F;&#x5426;&#x5728;min&#x548C;max&#x4E4B;&#x95F4;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x3001;&#x6570;&#x7EC4;&#x3001;&#x96C6;&#x5408;&#x3001;Map&#x7B49;</p>
+</li>
+<li><p>@URL(protocol=,host,port)</p>
+<p>&#x68C0;&#x67E5;&#x662F;&#x5426;&#x662F;&#x4E00;&#x4E2A;&#x6709;&#x6548;&#x7684;URL&#xFF0C;&#x5982;&#x679C;&#x63D0;&#x4F9B;&#x4E86;protocol&#xFF0C;host&#x7B49;&#xFF0C;&#x5219;&#x8BE5;URL&#x8FD8;&#x9700;&#x6EE1;&#x8DB3;&#x63D0;&#x4F9B;&#x7684;&#x6761;&#x4EF6;</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>&#x6848;&#x4F8B;</p>
+<pre><code>  @EqualsAndHashCode(callSuper = true)
+  @Data
+  @ToString
+  @ApiModel(&quot;APP&#x7AEF;-&#x624B;&#x673A;&#x53F7;&#x7801;&#x767B;&#x5F55;&#x5B9E;&#x4F53;&quot;)
+  public class LoginAppDTO extends BaseWebApiDTO {
+
+      @NotBlank(message = &quot;&#x6388;&#x6743;&#x624B;&#x673A;&#x53F7;&#x7801;&#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;&quot;)
+      @Length(max = 11, min = 11, message = &quot;&#x624B;&#x673A;&#x53F7;&#x7801;&#x957F;&#x5EA6;&#x4E0D;&#x5BF9;&quot;)
+      @ApiModelProperty(notes = &quot;&#x6388;&#x6743;&#x624B;&#x673A;&#x53F7;&#x7801;&quot;, value = &quot;mobile&quot;, name = &quot;mobile&quot;, dataType = &quot;String&quot;, example = &quot;13568888932&quot;)
+      private String mobile;
+
+      @NotBlank(message = &quot;&#x6CE8;&#x518C;&#x6765;&#x6E90;&#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;&quot;)
+      @ApiModelProperty(notes = &quot;&#x6CE8;&#x518C;&#x6765;&#x6E90;(1&#x624B;&#x673A;&#x53F7; 2&#x90AE;&#x7BB1; 3&#x7528;&#x6237;&#x540D; 4qq 5&#x5FAE;&#x4FE1; 6&#x817E;&#x8BAF;&#x5FAE;&#x535A; 7&#x65B0;&#x6D6A;&#x5FAE;&#x535A;) &quot;, value = &quot;registerSource&quot;, name = &quot;registerSource&quot;, dataType = &quot;int&quot;, example = &quot;1&quot;)
+      private Integer registerSource;
+
+      @NotBlank(message = &quot;&#x624B;&#x673A;&#x9A8C;&#x8BC1;&#x7801;&#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;&quot;)
+      @Length(min = 6, max = 6, message = &quot;&#x624B;&#x673A;&#x9A8C;&#x8BC1;&#x7801;&#x683C;&#x5F0F;&#x4E0D;&#x5BF9;&quot;)
+      @ApiModelProperty(notes = &quot;&#x624B;&#x673A;&#x53F7;&#x7801;&#x9A8C;&#x8BC1;&#x7801;&quot;, value = &quot;verificationCode&quot;, name = &quot;verificationCode&quot;, dataType = &quot;String&quot;, example = &quot;123456&quot;)
+      private String verificationCode;
+  }
+</code></pre><p>@Valid</p>
+<pre><code>  @ApiOperation(value = &quot;&#x7528;&#x6237;&#x540D;+&#x5BC6;&#x7801;&#x3010;&#x767B;&#x5F55;&#x3011;&#x63A5;&#x53E3;&quot;, tags = {&quot;&#x7528;&#x6237;&#x540D;+&#x5BC6;&#x7801;&#x3010;&#x767B;&#x5F55;&#x3011;&#x63A5;&#x53E3;&quot;}, notes = &quot;&#x524D;&#x7AEF;&#x9700;&#x8981;&#x6548;&#x9A8C;&#x624B;&#x673A;&#x53F7;&quot;)
+  @PostMapping(&quot;login/username&quot;)
+  public TokenDTO loginByMobile2Web(@RequestBody @Valid
+                                      @ApiParam(name = &quot;&#x7528;&#x6237;&#x624B;&#x673A;&#x767B;&#x5F55;&#x5B9E;&#x4F53;&quot;, value = &quot;&#x4F20;&#x5165;json&#x683C;&#x5F0F;&quot;, required = true)
+                                              LoginUsernameDTO loginUsernameDTO,
+                                      HttpServletRequest httpServletRequest) {
+        return opService.loginByUsername(loginUsernameDTO, httpServletRequest);
+  }
+</code></pre></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="请求有关的注解.html" class="navigation navigation-prev " aria-label="Previous page: 第3节：请求有关的注解">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="ORM注解.html" class="navigation navigation-next " aria-label="Next page: 第4节：ORM注解">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第3节：验证类型 的注解","level":"1.8.4","depth":2,"next":{"title":"第4节：ORM注解","level":"1.8.5","depth":2,"path":"project_development_process/ORM注解.md","ref":"project_development_process/ORM注解.md","articles":[]},"previous":{"title":"第3节：请求有关的注解","level":"1.8.3","depth":2,"path":"project_development_process/请求有关的注解.md","ref":"project_development_process/请求有关的注解.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"project_development_process/验证类型的注解.md","mtime":"2019-04-22T06:13:09.197Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-22T07:24:50.332Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -46,13 +46,50 @@
     
         * mysql 
           
-          mysql 需连接到 ```192.169.200.66:3336```  
+          mysql 需连接到
+          ```
+           spring:
+             datasource:
+               url: jdbc:mysql://10.0.0.164:3336/uk_arch_push?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useAffectedRows=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=true
+               username: push
+               password: quei]w6pu7ooD4ubahth
+               type: com.alibaba.druid.pool.DruidDataSource
+               druid:
+                 max-active: 20
+                 initial-size: 1
+                 max-wait: 60000
+                 min-idle: 3
+                 remove-abandoned: true
+                 remove-abandoned-timeout: 180
+                 connection-properties:
+                 clientEncoding: UTF-8
+                 test-while-idle: false
+                 enabled: true 
+          ```
         
         *  redis
             
-          redis 需连接到 ```192.168.200.121:```
+         redis 需连接到 
+         ```
+           spring:
+            redis:
+              host: 10.0.0.185
+              port: 6379
+              database: 1
+         ```
           
         * rabbitmq
+        
+        rabbitmq 需连接到 
+         ```
+          spring:
+           rabbitmq:
+             host: 10.0.0.81
+             port: 5672
+             username: uoko_pre
+             password: uoko123
+
+         ```
 
 * jenkins 发布
     预发布环境不对开发级别开放，目前由`子衡`和`先果`共同发布，需要发布请联系

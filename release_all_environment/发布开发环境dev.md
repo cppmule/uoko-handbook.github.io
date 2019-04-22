@@ -59,14 +59,52 @@ IP|	OS|	root密码|	port|	操作账号|	操作密码|作用
     
         * mysql 
           
-          mysql 需连接到 ```192.169.200.66:3336```  
+          mysql 需连接到 
+          ```
+           spring:
+              datasource:
+                 url: jdbc:mysql://192.168.200.60:3336/uoko-platform-uc?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useAffectedRows=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+                 driver-class-name: com.mysql.jdbc.Driver
+                 username: uoko
+                 password: MdmgKSFdUZwK
+                 type: com.alibaba.druid.pool.DruidDataSource
+                 druid:
+                   max-active: 20
+                   initial-size: 1
+                   max-wait: 60000
+                   min-idle: 3
+                   remove-abandoned: true
+                   remove-abandoned-timeout: 180
+                   connection-properties:
+                   client-encoding: UTF-8
+                   test-while-idle: true
+          ```  
         
         *  redis
             
-          redis 需连接到 ```192.168.200.121:```
+          redis 需连接到 
+          ```
+           spring:
+              redis:
+                host: 192.168.200.121
+                port: 6379
+                database: 3
+          ```
           
         * rabbitmq
+          
+          rabbitmq 需连接到 
+          ```
+           spring:
+             rabbitmq:
+               host: 192.168.200.122
+               port: 5672
+               username: admin
+               password: abcd1234
+          
+          ```
 
+        
 * jenkins 发布
   
   jenkins发布，点击 [http://192.168.200.120:8080/jenkins](http://192.168.200.120:8080/jenkins)

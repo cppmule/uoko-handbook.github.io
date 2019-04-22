@@ -542,12 +542,77 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.1" data-path="../project_development_process/常见注解.html">
+        <li class="chapter " data-level="1.8.1" data-path="../project_development_process/自研注解.html">
             
-                <a href="../project_development_process/常见注解.html">
+                <a href="../project_development_process/自研注解.html">
             
                     
-                    第1节：常见注解
+                    第1节：自研注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../project_development_process/spring注解.html">
+            
+                <a href="../project_development_process/spring注解.html">
+            
+                    
+                    第2节：spring注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../project_development_process/请求有关的注解.html">
+            
+                <a href="../project_development_process/请求有关的注解.html">
+            
+                    
+                    第3节：请求有关的注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../project_development_process/验证类型的注解.html">
+            
+                <a href="../project_development_process/验证类型的注解.html">
+            
+                    
+                    第3节：验证类型 的注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../project_development_process/ORM注解.html">
+            
+                <a href="../project_development_process/ORM注解.html">
+            
+                    
+                    第4节：ORM注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../project_development_process/SpringCloud常用注解.html">
+            
+                <a href="../project_development_process/SpringCloud常用注解.html">
+            
+                    
+                    第4节：SpringCloud常用注解
             
                 </a>
             
@@ -1018,12 +1083,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.15" data-path="../handbook_download/各种手册管理.html">
+        <li class="chapter " data-level="1.15" data-path="../based_component/基础组件.html">
             
-                <a href="../handbook_download/各种手册管理.html">
+                <a href="../based_component/基础组件.html">
             
                     
-                    第十二章: 各种手册管理
+                    第十二章: 基础组件
             
                 </a>
             
@@ -1032,7 +1097,39 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.15.1" data-path="../handbook_download/开发环境服务器.html">
+        <li class="chapter " data-level="1.15.1" data-path="../based_component/基础组件列表.html">
+            
+                <a href="../based_component/基础组件列表.html">
+            
+                    
+                    第1节：基础组件列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../handbook_download/各种手册管理.html">
+            
+                <a href="../handbook_download/各种手册管理.html">
+            
+                    
+                    第十三章: 各种手册管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../handbook_download/开发环境服务器.html">
             
                 <a href="../handbook_download/开发环境服务器.html">
             
@@ -1045,7 +1142,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.15.2" data-path="../handbook_download/各种组件、服务地址.html">
+        <li class="chapter " data-level="1.16.2" data-path="../handbook_download/各种组件、服务地址.html">
             
                 <a href="../handbook_download/各种组件、服务地址.html">
             
@@ -1058,7 +1155,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.15.3" data-path="../handbook_download/工具下载.html">
+        <li class="chapter " data-level="1.16.3" data-path="../handbook_download/工具下载.html">
             
                 <a href="../handbook_download/工具下载.html">
             
@@ -1071,7 +1168,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.15.4" data-path="../handbook_download/各种手册下载地址.html">
+        <li class="chapter " data-level="1.16.4" data-path="../handbook_download/各种手册下载地址.html">
             
                 <a href="../handbook_download/各种手册下载地址.html">
             
@@ -1173,13 +1270,43 @@
 <li><p>&#x5176;&#x4ED6;&#x989D;&#x5916;&#x53C2;&#x6570;&#x68C0;&#x67E5;</p>
 <ul>
 <li><p>mysql </p>
-<p>mysql &#x9700;&#x8FDE;&#x63A5;&#x5230; <code>192.169.200.66:3336</code>  </p>
-</li>
+<p>mysql &#x9700;&#x8FDE;&#x63A5;&#x5230; </p>
+<pre><code>spring:
+  datasource:
+    url: jdbc:mysql://10.0.1.198:3306/uk_arch_push?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;useAffectedRows=true&amp;zeroDateTimeBehavior=convertToNull&amp;allowMultiQueries=true&amp;useSSL=true
+    username: uoko
+    password: jeu4veet8eed/ah7Yae5
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      max-active: 20
+      initial-size: 1
+      max-wait: 60000
+      min-idle: 3
+      remove-abandoned: true
+      remove-abandoned-timeout: 180
+      connection-properties:
+      clientEncoding: UTF-8
+      test-while-idle: false
+      enabled: true
+</code></pre></li>
 <li><p>redis</p>
-<p>redis &#x9700;&#x8FDE;&#x63A5;&#x5230; <code>192.168.200.121:</code></p>
-</li>
+<p>redis &#x9700;&#x8FDE;&#x63A5;&#x5230; </p>
+<pre><code>spring:
+ redis:
+   host: 10.0.2.7
+   port: 6379
+   database: 1
+   password: crs-44hecp9n:wykZBT9vFzgYm!Nu
+</code></pre></li>
 <li><p>rabbitmq</p>
-</li>
+<p>rabbitmq &#x9700;&#x8FDE;&#x63A5;&#x5230; </p>
+<pre><code>   spring:
+    rabbitmq:
+      host: 10.0.0.197
+      port: 5672
+      username: uoko
+      password: abcd1234
+</code></pre></li>
 </ul>
 </li>
 </ul>
@@ -1231,7 +1358,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第4节：发布线上环境(prod)","level":"1.13.4","depth":2,"next":{"title":"第十一章: 出问题啦？","level":"1.14","depth":1,"path":"appear_bug/出问题啦.md","ref":"appear_bug/出问题啦.md","articles":[{"title":"第1节：架构出问题了找谁？","level":"1.14.1","depth":2,"path":"appear_bug/架构出问题了找谁.md","ref":"appear_bug/架构出问题了找谁.md","articles":[]},{"title":"第2节：架构有独特的见解找谁实现？","level":"1.14.2","depth":2,"path":"appear_bug/架构有独特的见解找谁实现.md","ref":"appear_bug/架构有独特的见解找谁实现.md","articles":[]},{"title":"第3节：出现各种问题找谁？","level":"1.14.3","depth":2,"path":"appear_bug/开发过程出现各种问题找谁.md","ref":"appear_bug/开发过程出现各种问题找谁.md","articles":[]},{"title":"第4节：项目负责人","level":"1.14.4","depth":2,"path":"appear_bug/项目负责人.md","ref":"appear_bug/项目负责人.md","articles":[]}]},"previous":{"title":"第3节：发布预发布环境(pre)","level":"1.13.3","depth":2,"path":"release_all_environment/发布预发布环境pre.md","ref":"release_all_environment/发布预发布环境pre.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"release_all_environment/发布线上环境prod.md","mtime":"2019-04-20T04:22:57.950Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-20T04:53:09.428Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第4节：发布线上环境(prod)","level":"1.13.4","depth":2,"next":{"title":"第十一章: 出问题啦？","level":"1.14","depth":1,"path":"appear_bug/出问题啦.md","ref":"appear_bug/出问题啦.md","articles":[{"title":"第1节：架构出问题了找谁？","level":"1.14.1","depth":2,"path":"appear_bug/架构出问题了找谁.md","ref":"appear_bug/架构出问题了找谁.md","articles":[]},{"title":"第2节：架构有独特的见解找谁实现？","level":"1.14.2","depth":2,"path":"appear_bug/架构有独特的见解找谁实现.md","ref":"appear_bug/架构有独特的见解找谁实现.md","articles":[]},{"title":"第3节：出现各种问题找谁？","level":"1.14.3","depth":2,"path":"appear_bug/开发过程出现各种问题找谁.md","ref":"appear_bug/开发过程出现各种问题找谁.md","articles":[]},{"title":"第4节：项目负责人","level":"1.14.4","depth":2,"path":"appear_bug/项目负责人.md","ref":"appear_bug/项目负责人.md","articles":[]}]},"previous":{"title":"第3节：发布预发布环境(pre)","level":"1.13.3","depth":2,"path":"release_all_environment/发布预发布环境pre.md","ref":"release_all_environment/发布预发布环境pre.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"release_all_environment/发布线上环境prod.md","mtime":"2019-04-22T02:34:44.896Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-22T07:24:50.332Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1239,6 +1366,10 @@
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

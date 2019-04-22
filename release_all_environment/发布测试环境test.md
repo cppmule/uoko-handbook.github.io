@@ -26,8 +26,8 @@ IP|	OS|	root密码|	port|	操作账号|	操作密码|作用
       
       ```
        spring:
-             cloud:
-               config:
+           cloud:
+              config:
                  uri: http://192.168.200.26:8040
                  name: uoko-platform-auth,uoko-system-common
                  profile: pro
@@ -40,11 +40,8 @@ IP|	OS|	root密码|	port|	操作账号|	操作密码|作用
     
         ```
           cloud:
-        #    service-registry:
-        #      auto-registration:
-        #        enabled: false
             consul:
-              host: 192.168.200.22
+              host: 192.168.200.27
               port: 8500
               discovery:
                 healthCheckPath: /actuator/health
@@ -57,13 +54,52 @@ IP|	OS|	root密码|	port|	操作账号|	操作密码|作用
     
         * mysql 
           
-          mysql 需连接到 ```192.169.200.66:3336```  
+          mysql 需连接到 
+          ```
+            spring:
+              datasource:
+                 url: jdbc:mysql://192.168.200.28:3306/uoko-platform-uc?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useAffectedRows=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+                 driver-class-name: com.mysql.jdbc.Driver
+                 username: root
+                 password: ZiHeng@uoko2018
+                 type: com.alibaba.druid.pool.DruidDataSource
+                 druid:
+                   max-active: 20
+                   initial-size: 1
+                   max-wait: 60000
+                   min-idle: 3
+                   remove-abandoned: true
+                   remove-abandoned-timeout: 180
+                   connection-properties:
+                   client-encoding: UTF-8
+                   test-while-idle: true
+          ```  
         
         *  redis
             
-          redis 需连接到 ```192.168.200.121:```
+          redis 需连接到 
+          ```
+              spring:
+                redis:
+                  host: 192.168.200.28
+                  port: 6379
+                  database: 3
+                  password: Uoko@123456
+          ```
           
         * rabbitmq
+        
+        rabbitmq 需连接到 
+        ```
+          spring:
+            rabbitmq:
+              host: 192.168.200.28
+              port: 5672
+              username: admin
+              password: uoko123
+        ```
+        
+        
 
 * jenkins 发布
   
