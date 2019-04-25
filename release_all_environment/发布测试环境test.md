@@ -9,10 +9,11 @@
 
 IP|	OS|	root密码|	port|	操作账号|	操作密码|作用
 ---|---|---|---|---|---|---
-192.168.200.126|	centos7.5|	-|	22|	    arch-uoko|	archUoko@123|X端开发占用中
-192.168.200.44|  	centos7.5|        -|	 22|	arch-uoko|	archUoko@123|基础组件占用中
-192.168.200.45|  	centos7.5|        -|	 22|	arch-uoko|	archUoko@123|可部署其他服务
-192.168.200.46|  	centos7.5|        -|	 22|	arch-uoko|	archUoko@123|可部署其他开发服务
+192.168.200.26|	centos7.5|	-|	22|	    arch-uoko|	archUoko@123|X端开发占用中
+192.168.200.28|  	centos7.5|        -|	 22|	ziheng| uoko123456|基础组件占用中
+192.168.200.27|  	centos7.5|        -|	 22|	ziheng| uoko123456|可部署其他服务
+192.168.200.29|  	centos7.5|        -|	 22|	ziheng| uoko123456|可部署其他开发服务
+192.168.200.30|  	centos7.5|        -|	 22|	ziheng| uoko123456|可部署其他开发服务
 
 * 配置信息检查
    

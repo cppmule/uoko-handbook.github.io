@@ -20,7 +20,7 @@
        spring:
              cloud:
                config:
-                 uri: http://10.0.0.228:8040
+                 uri: http://10.0.0.218:8040
                  name: uoko-platform-auth,uoko-system-common
                  profile: pro
                  label: master
