@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/release_all_environment/发布测试环境test.md" description="192.168.200.45|  &#9;centos7.5|        -|&#9; 22|&#9;arch-u..." line="13" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="1f71ab1f-7f41-4ac3-b768-a8c7cfb5faab" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/mirco-service-handbook.uoko.io.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mirco-service-handbook.uoko.io.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,6 +27,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="发布预发布环境pre.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/release_all_environment/发布预发布环境pre.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="399">
+                <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="发布测试环境test.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/release_all_environment/发布测试环境test.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="336">
+                <caret line="14" column="62" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="架构出问题了找谁.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/appear_bug/架构出问题了找谁.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
@@ -77,24 +99,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="各种手册下载地址.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="各种手册下载地址.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/handbook_download/各种手册下载地址.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
               <first_editor relative-caret-position="264">
-                <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="项目负责人.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appear_bug/项目负责人.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="168">
-                <caret line="7" column="6" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="6" />
+                <caret line="11" selection-start-line="11" selection-end-line="11" />
               </first_editor>
               <second_editor />
             </state>
@@ -107,18 +117,6 @@
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="48">
                 <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="maven万能手册.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/maven_handbook/maven万能手册.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="48">
-                <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
               </first_editor>
               <second_editor />
             </state>
@@ -179,7 +177,6 @@
         <option value="$PROJECT_DIR$/handbook_download/开发环境服务器.md" />
         <option value="$PROJECT_DIR$/handbook_download/各种组件、服务地址.md" />
         <option value="$PROJECT_DIR$/release_all_environment/发布开发环境dev.md" />
-        <option value="$PROJECT_DIR$/release_all_environment/发布预发布环境pre.md" />
         <option value="$PROJECT_DIR$/release_all_environment/发布线上环境prod.md" />
         <option value="$PROJECT_DIR$/based_component/基础组件.md" />
         <option value="$PROJECT_DIR$/based_component/基础组件列表.md" />
@@ -187,7 +184,6 @@
         <option value="$PROJECT_DIR$/project_development_process/自研注解.md" />
         <option value="$PROJECT_DIR$/project_development_process/验证类型的注解.md" />
         <option value="$PROJECT_DIR$/SUMMARY.md" />
-        <option value="$PROJECT_DIR$/release_all_environment/发布测试环境test.md" />
         <option value="$PROJECT_DIR$/project_development_process/spring注解.md" />
         <option value="$PROJECT_DIR$/how_begin_one_project/中台服务.md" />
         <option value="$PROJECT_DIR$/how_begin_one_project/前台业务服务.md" />
@@ -199,6 +195,8 @@
         <option value="$PROJECT_DIR$/appear_bug/架构出问题了找谁.md" />
         <option value="$PROJECT_DIR$/appear_bug/开发过程出现各种问题找谁.md" />
         <option value="$PROJECT_DIR$/handbook_download/各种手册下载地址.md" />
+        <option value="$PROJECT_DIR$/release_all_environment/发布测试环境test.md" />
+        <option value="$PROJECT_DIR$/release_all_environment/发布预发布环境pre.md" />
       </list>
     </option>
   </component>
@@ -248,7 +246,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/_book" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -336,8 +334,9 @@
       <updated>1555586171892</updated>
       <workItem from="1555586175326" duration="7501000" />
       <workItem from="1555638873486" duration="25177000" />
-      <workItem from="1555896959538" duration="16683000" />
-      <workItem from="1555925519804" duration="149000" />
+      <workItem from="1555896959538" duration="17242000" />
+      <workItem from="1556179888973" duration="53000" />
+      <workItem from="1556180178249" duration="385000" />
     </task>
     <task id="LOCAL-00001" summary=":art: 完成UOKO项目架构">
       <created>1555590253913</created>
@@ -416,21 +415,29 @@
       <option name="project" value="LOCAL" />
       <updated>1555919217701</updated>
     </task>
-    <task id="LOCAL-00012" summary=":art: 完成v.1版本">
-      <created>1555925598520</created>
+    <task id="LOCAL-00012" summary=":art: 修改文档错误问题">
+      <created>1555925889308</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1555925598520</updated>
+      <updated>1555925889308</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary=":art: 修改文档错误问题">
+      <created>1556180335330</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1556180335330</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49510000" />
+    <option name="totallyTimeSpent" value="50358000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
@@ -455,7 +462,7 @@
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.38807648" />
       <window_info anchor="bottom" id="CheckStyle" order="14" />
       <window_info anchor="bottom" id="Terminal" order="15" sideWeight="0.49946353" weight="0.3295838" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49943757" visible="true" weight="0.20010729" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49943757" visible="true" weight="0.24678111" />
       <window_info id="JRebel" order="2" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" sideWeight="0.5005624" side_tool="true" weight="0.19742489" />
@@ -510,7 +517,8 @@
     <MESSAGE value=":art: 完成 maven万能手册 章节" />
     <MESSAGE value=":art: 完成 各种手册管理 章节" />
     <MESSAGE value=":art: 完成v.1版本" />
-    <option name="LAST_COMMIT_MESSAGE" value=":art: 完成v.1版本" />
+    <MESSAGE value=":art: 修改文档错误问题" />
+    <option name="LAST_COMMIT_MESSAGE" value=":art: 修改文档错误问题" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/core_business_server/uoko-module-xxx-api.md">
@@ -793,31 +801,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/release_all_environment/发布预发布环境pre.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="471">
-            <caret line="88" column="28" lean-forward="true" selection-start-line="88" selection-start-column="28" selection-end-line="88" selection-end-column="28" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/handbook_download/各种手册管理.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="24">
             <caret line="1" selection-start-line="1" selection-end-line="1" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/release_all_environment/发布测试环境test.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="264">
-            <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
           </first_editor>
           <second_editor />
         </state>
@@ -971,11 +959,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/based_component/基础组件.md">
+    <entry file="file://$PROJECT_DIR$/README.md" />
+    <entry file="file://$PROJECT_DIR$/handbook_download/各种手册下载地址.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="288">
-            <caret line="12" selection-start-line="12" selection-end-line="12" />
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="264">
+            <caret line="11" selection-start-line="11" selection-end-line="11" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/release_all_environment/发布测试环境test.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="336">
+            <caret line="14" column="62" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
           </first_editor>
           <second_editor />
         </state>
@@ -991,13 +990,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md" />
-    <entry file="file://$PROJECT_DIR$/SUMMARY.md" />
-    <entry file="file://$PROJECT_DIR$/handbook_download/各种手册下载地址.md">
+    <entry file="file://$PROJECT_DIR$/based_component/基础组件.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="264">
-            <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="288">
+            <caret line="12" selection-start-line="12" selection-end-line="12" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SUMMARY.md" />
+    <entry file="file://$PROJECT_DIR$/release_all_environment/发布预发布环境pre.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="399">
+            <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
           </first_editor>
           <second_editor />
         </state>
